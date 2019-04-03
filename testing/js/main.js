@@ -69,13 +69,7 @@
 
 const selectedCity = citymap[Math.floor(Math.random() * citymap.length)]
 
-    // function initMap() {
-    // // Create the map.
-    // var map = new google.maps.Map(document.getElementById('map'), {
-    //     zoom: (citymap[selectedCityArea].area <= 250) ? 14 : 10.25,
-    //     center: selectedCityLonLat,
-    //     mapTypeId: 'terrain'
-    // });
+
     function initMap() {
         // Create the map.
         var map = new google.maps.Map(document.getElementById('map'), {
