@@ -19,7 +19,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <div id="section">
             <div id="martial"  class="floating-panel">Martial Law Procedures</div>
             <div id="peop"     class="floating-panel">Public Data</div>
-            <div id="cdc"      class="floating-panel">CDC Emergency Response</div>
+            <div id="sci"      class="floating-panel">CDC Emergency Response</div>
         </div>
             <!-- G O V E R N M E N T   T A B  -->
             <div id="titlewrapper"></div>
@@ -29,8 +29,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
                     <input type="text" id="gov" placeholder="//CDC~EOCIMS@.REF~CODE//"><br><input id="govsub" type="submit" value="Submit">
                 </div>
                 <div class="progbardiv"><p>Calm</p>
-                    <progress id="health" value=10 max=40></progress>
-                    <p>Frantic</p>
+                    <progress id="govtolerance" value=10 max=40></progress>
+                    <p>Hostile</p>
                 </div>
             </div>
                 
@@ -38,15 +38,37 @@ src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
             <div id="populationwrap" class="tabcontent">
                 <div id="population">
                     <div class="progbardiv"><p>Calm</p>
-                        <progress id="health" value=10 max=40></progress>
+                        <progress id="peoptolerance" value=10 max=40></progress>
                         <p>Frantic</p>
                     </div>
                 </div>
             </div>
         
             <!-- S C I E N T I S T   T A B -->
-            <div id="scientist" class="tabcontent">
+            <div id="scientistwrap" class="tabcontent">
+                <div id="scitab">
+                    <div id="scitab2">
+                        <div 
+                        id="action" class="tabcontent">EOCIMS Ref. Codes
+                        </div>
+                        <div 
+                        id="guide" class="tabcontent">NBACC Contagion Ref. Guide
+                        </div>
+                        <div 
+                        id="solutions" class="tabcontent">Emergency Solutions
+                        </div>
+                        <div class="cure">Cure Research</div>
+                        <div id="med" class="progbardiv"><p id="bad">Undeveloped</p>
+                            <progress id="cureprogress" value=10 max=40></progress>
+                            <p id="good">Distributed</p>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
                 <div>
+
+                </div>
 
                 </div>
 

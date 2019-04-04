@@ -18,10 +18,13 @@ progress[value]::-webkit-progress-value {
         -webkit-linear-gradient(top,
         rgba(255, 255, 255, 0),
         rgba(207, 0, 0, 0.25)),
-        -webkit-linear-gradient(left, #09c, #f44);
+        -webkit-linear-gradient(left, rgb(255, 235, 58), #f44);
 
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+#med {
+    margin-top: 0%;
 }
 .progbardiv{
     margin-top: 10%;
@@ -91,16 +94,13 @@ nav {
 .floating-panel {
     cursor: pointer;
     z-index: 5;
-    border: 1px solid #999;
-    font-family: 'Roboto','sans-serif';
     line-height: 22px;
-    margin: 0% 2.778%;
-    background-color: #e5611c;
-    border-radius: 3px 3px 3px 3px;
+    padding: .4% 3% .6% 2%;
+    background-color: #e5f403cf;
+    border-radius: 0px 20px 0px 15px;
     text-align: center;
-    box-shadow: 0px 0px 4px 1px;
     border: dashed;
-    border-color: lightcoral;
+    border-color: #050505;
     font-family: monospace;
     font-size: large;
 }
@@ -164,12 +164,63 @@ nav {
 /* E N D   P O P L T N   W R A P */
 
 /* S C I   W R A P */
-#scientist{
-    width: 150%;
-    height: 50vh;
-    margin-left: 2%;
-    background: white;
+#scientistwrap{
+    width: 86.122222%;
+    height: 27vh;
+    margin-left: 4%;
+    background: rgb(98, 7, 7,.7);
+    position: relative;
+    z-index: 3;
+    border-radius: 0px 0px 50px 50px;
+    border: solid;
+    text-align: center;
 }
+
+#scitab2{
+    display: inline-flex;
+    flex-flow: wrap;
+    justify-content: center;
+    height: 19%;
+}
+#action,#guide,#solutions {
+    cursor: pointer;
+    z-index: 5;
+    line-height: 22px;
+    margin: 0% 2.778%;
+    margin-top: 5%;
+    background-color: #e5611c;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+    box-shadow: 0px 0px 4px 1px;
+    border: solid;
+    border-color: lightcoral;
+    font-family: monospace;
+    font-size: large;
+    width: 26%;
+}
+.cure {
+    cursor: pointer;
+    z-index: 5;
+    line-height: 22px;
+    margin: 0% 2.778%;
+    margin-top: 5%;
+    background-color: #59feffb5;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+    box-shadow: 0px 0px 4px 1px;
+    border: inset;
+    border-color: lightcoral;
+    font-family: monospace;
+    font-size: large;
+    width: 26%;
+}
+#good {
+    background: #325bac85;
+}
+#bad{
+    background: #607d8b00;
+}
+
 /* E N D  S C I   W R A P */
 
 

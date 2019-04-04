@@ -18,6 +18,15 @@
         }
         $('#populationwrap').toggle("slow")
     })
+    $('#sci').on('click', ()=>{
+        if(toggle === true){
+            $('title').hide()
+            toggle = false
+        }
+        console.log('working')
+        $('#scientistwrap').toggle("slow")
+    })
+    
     //  C I T Y   L O G 
     var citymap = [
     {
