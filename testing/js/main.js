@@ -1,25 +1,23 @@
     // I N F O   T A B
     var toggle = true;
     $('#governmentwrap').hide()
-    $('#population').hide()
-    $('#scientist').hide()
-    // S W I T C H   T A B S 
+    $('#populationwrap').hide()
+    $('#scientistwrap').hide()
+    // M A I N   T A B S 
     $('#martial').on('click', ()=>{
         if(toggle === true){
             $('title').hide()
             toggle = false
         }
         $('#governmentwrap').toggle("slow")
-        
-
-
-        
     })
-    
-
-    // This example creates circles on the map, representing populations in North
-    // America.
-    // First, create an object containing LatLng and population for each city.
+    $('#peop').on('click', ()=>{
+        if(toggle === true){
+            $('title').hide()
+            toggle = false
+        }
+        $('#populationwrap').toggle("slow")
+    })
     //  C I T Y   L O G 
     var citymap = [
     {
@@ -96,11 +94,8 @@ const selectedCity = citymap[Math.floor(Math.random() * citymap.length)]
             center: selectedCity.center,
             mapTypeId: 'terrain'
         });
-    // for (var area in citymap){
-    //     if(area <=250){
-    //         map.zoom: 14
-    //     }
-    // }
+
+// G O O G L E   M A P S    C I R C L E
 
     // Construct the circle for each value in citymap.
     // Note: We scale the area of the circle based on the population.

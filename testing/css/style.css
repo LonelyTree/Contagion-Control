@@ -1,10 +1,10 @@
 
-/* Always set the map height explicitly to define the size of the div
-element that contains the map. */
+
+/* P R O G R E S S    B A R */
 progress[value] {
     -webkit-appearance: none;
     width: 54%;
-    height: 86%;
+    height: 2.39vh;
     box-sizing: border-box;
     display: inline-block;
 }
@@ -23,7 +23,7 @@ progress[value]::-webkit-progress-value {
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
 }
-#progbardiv{
+.progbardiv{
     margin-top: 10%;
     margin-left: 1%;
     height: 7%;
@@ -41,9 +41,8 @@ p {
     border: groove;
     border-radius: 10%;
 }
-button:focus {
-    outline: 0;
-}
+/* E N D   P R O G R E S S    B A R */
+/* G O O G L E   M A P S  B T N  R E M O V E */
 .gm-control-active{
     display:none;
 }
@@ -57,27 +56,37 @@ nav {
     display: flex;
     justify-content: flex-start;
 }
+/* E N D   G O O G L E   M A P S  B T N  R E M O V E */
 
+/* M A I N   B T N   S E L C T  W R A P*/
 #wrapper { 
     position: absolute;
-    width: 39%;
-    display: inherit;
+    width: 41.5%;
+    display: inline-flex;
     padding-top: 3%;
     justify-content: inherit;
     padding-left: 4%;
     flex-direction: column;
 }
+#titlewrapper {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    height: 30%;
+}
+#title {
+    width: 96%;
+    height: 30vh;
+    margin-left: 2%;
+    background: white;
+}
+/* E N D   M A I N   B T N   S E L C T  W R A P*/
 
+/* M A I N   B T N   S E L C T */
 #section {
     display: inherit;
     width: 100%;
     justify-content: flex-start;
-}
-#titlewrapper {
-    display: inherit;
-    width: 100%;
-    justify-content: center;
-    height: 30%;
 }
 .floating-panel {
     cursor: pointer;
@@ -95,18 +104,15 @@ nav {
     font-family: monospace;
     font-size: large;
 }
-#title {
-    width: 96%;
-    height: 30vh;
-    margin-left: 2%;
-    background: white;
-}
+/* E N D   M A I N   B T N   S E L C T */
 
+/* G O V N M T   W R A P */
 #governmentwrap{
     width: 86.122222%;
     height: 40vh;
+    margin-left: 4%;
     background: rgb(98, 7, 7,.7);
-    position: absolute;
+    position: relative;
     z-index: 3;
     border-radius: 0px 0px 50px 50px;
     border: solid;
@@ -121,18 +127,6 @@ nav {
     display: inline-block;
     box-shadow: 0px 0px 30px 10px;
     border-radius: 4px 4px;
-}
-#population{
-    width: 96%;
-    height: 40vh;
-    margin-left: 2%;
-    background: white;
-}
-#scientist{
-    width: 150%;
-    height: 50vh;
-    margin-left: 2%;
-    background: white;
 }
 #gov { 
     width: 80%;
@@ -150,6 +144,33 @@ nav {
     border-radius: 4px;
     box-shadow: 0px 0px 20px 1px;
 }
+/* E N D   G O V N M T   W R A P */
+
+/* P O P L T N   W R A P */
+
+#populationwrap{
+    width: 64.1222%;
+    height: 18vh;
+    /* margin-right: -145%; */
+    background: rgba(98, 7, 7, 0.7);
+    position: relative;
+    z-index: 3;
+    border-radius: 0px 0px 50px 50px;
+    border: solid;
+    text-align: center;
+    margin-left: 15%;
+}
+
+/* E N D   P O P L T N   W R A P */
+
+/* S C I   W R A P */
+#scientist{
+    width: 150%;
+    height: 50vh;
+    margin-left: 2%;
+    background: white;
+}
+/* E N D  S C I   W R A P */
 
 
 
@@ -160,8 +181,9 @@ nav {
 
 
 
-
-
+ /* G O O G L E   M A P S */
+/* Always set the map height explicitly to define the size of the div
+element that contains the map. */
 
 #map {
 height: 100%;
