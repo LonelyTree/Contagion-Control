@@ -160,6 +160,15 @@ nav {
     text-align: center;
     margin-left: 15%;
 }
+#scope {
+    width: 65%;
+    margin-left: 15%;
+    border-radius: 10%;
+    border: solid;
+}
+#progpeop {
+    margin-top: -2%;
+}
 
 /* E N D   P O P L T N   W R A P */
 
