@@ -1,8 +1,49 @@
 
 /* Always set the map height explicitly to define the size of the div
 element that contains the map. */
+progress[value] {
+    -webkit-appearance: none;
+    width: 54%;
+    height: 86%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+progress[value]::-webkit-progress-bar {
+    background-color:black;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+    background-image:
+        -webkit-linear-gradient(top,
+        rgba(255, 255, 255, 0),
+        rgba(207, 0, 0, 0.25)),
+        -webkit-linear-gradient(left, #09c, #f44);
 
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+#progbardiv{
+    margin-top: 10%;
+    margin-left: 1%;
+    height: 7%;
+    display: inline-flex;
+    width: 92%;
+    align-items: center;
+    justify-content: center;
 
+}
+p {
+    padding:0% 1%;
+    font-size: x-large;
+    font-family: monospace;
+    background: coral;
+    border: groove;
+    border-radius: 10%;
+}
+button:focus {
+    outline: 0;
+}
 .gm-control-active{
     display:none;
 }
@@ -12,31 +53,116 @@ element that contains the map. */
 .gm-svpc{
     display: none;
 }
-
-
-.floating-panel {
-position: absolute;
-top: 10px;
-left: 25%;
-z-index: 5;
-background-color: #fff;
-padding: 5px;
-border: 1px solid #999;
-text-align: center;
-font-family: 'Roboto','sans-serif';
-line-height: 30px;
-padding-left: 10px;
+nav {
+    display: flex;
+    justify-content: flex-start;
 }
 
-/* #government{
+#wrapper { 
+    position: absolute;
+    width: 39%;
+    display: inherit;
+    padding-top: 3%;
+    justify-content: inherit;
+    padding-left: 4%;
+    flex-direction: column;
+}
 
+#section {
+    display: inherit;
+    width: 100%;
+    justify-content: flex-start;
+}
+#titlewrapper {
+    display: inherit;
+    width: 100%;
+    justify-content: center;
+    height: 30%;
+}
+.floating-panel {
+    cursor: pointer;
+    z-index: 5;
+    border: 1px solid #999;
+    font-family: 'Roboto','sans-serif';
+    line-height: 22px;
+    margin: 0% 2.778%;
+    background-color: #e5611c;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+    box-shadow: 0px 0px 4px 1px;
+    border: dashed;
+    border-color: lightcoral;
+    font-family: monospace;
+    font-size: large;
+}
+#title {
+    width: 96%;
+    height: 30vh;
+    margin-left: 2%;
+    background: white;
+}
+
+#governmentwrap{
+    width: 86.122222%;
+    height: 40vh;
+    background: rgb(98, 7, 7,.7);
+    position: absolute;
+    z-index: 3;
+    border-radius: 0px 0px 50px 50px;
+    border: solid;
+    text-align: center;
+}
+#government {
+    width: 64%;
+    margin-top: 9%;
+    background: yellow;
+    border: coral dashed 5px;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0px 0px 30px 10px;
+    border-radius: 4px 4px;
 }
 #population{
-
+    width: 96%;
+    height: 40vh;
+    margin-left: 2%;
+    background: white;
 }
 #scientist{
+    width: 150%;
+    height: 50vh;
+    margin-left: 2%;
+    background: white;
+}
+#gov { 
+    width: 80%;
+    margin: 10px;
+    font-size: 22.79px;
+    background: black;
+    color: coral;
+}
+#govsub {
+    background: #b62424;
+    width: 51%;
+    font-size: xx-large;
+    font-family: monospace;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px 1px;
+}
 
-} */
+
+
+
+
+
+
+
+
+
+
+
+
 #map {
 height: 100%;
 }
@@ -47,5 +173,8 @@ body {
 height: 100%;
 margin: 0;
 padding: 0;
+}
+input {
+    width: 40%;
 }
 

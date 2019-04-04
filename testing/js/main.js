@@ -1,8 +1,26 @@
+    // I N F O   T A B
+    var toggle = true;
+    $('#governmentwrap').hide()
+    $('#population').hide()
+    $('#scientist').hide()
+    // S W I T C H   T A B S 
+    $('#martial').on('click', ()=>{
+        if(toggle === true){
+            $('title').hide()
+            toggle = false
+        }
+        $('#governmentwrap').toggle("slow")
+        
+
+
+        
+    })
+    
 
     // This example creates circles on the map, representing populations in North
     // America.
-
     // First, create an object containing LatLng and population for each city.
+    //  C I T Y   L O G 
     var citymap = [
     {
         name: 'chicago',

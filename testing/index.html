@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<!-- J Q U E R Y -->
+<script 
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</script>
+<!--  -->
 <link rel="stylesheet" href="css/style.css">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
@@ -8,12 +14,56 @@
 
 </head>
 <body>
-        <div id="floating-panel">Here's hoping I can place things on the page!</div>
+<nav>
+    <div id="wrapper" >
+        <div id="section">
+            <div id="martial"  class="floating-panel">Martial Law Procedures</div>
+            <div id="peop"     class="floating-panel">Public Data</div>
+            <div id="cdc"      class="floating-panel">CDC Emergency Response</div>
+        </div>
+        <div id="titlewrapper">
+        
+            <div id="governmentwrap" class="tabcontent">
+                <div id="government">
+                    <input type="text" id="gov" placeholder="//CDC~EOCIMS@.REF~CODE//"><br><input id="govsub" type="submit" value="Submit">
+                </div>
+                <div id="progbardiv"><p>Calm</p>
+                    <progress id="health" value=10 max=40></progress>
+                    <p>Frantic</p>
+                </div>
+                
+            </div>
+        
+        
+            <div id="population" class="tabcontent">
+
+
+            </div>
+        
+        
+            <div id="scientist" class="tabcontent">
+                <div>
+
+                </div>
+
+            </div>
+        </div>          
+    </div>
+</nav>
+<!-- F A K E   T E R M I N A L -->
+
+
+
+<!-- G O O G L E   M A P S-->
 <div id="map">
         
 </div>
 
+
+<!-- J A V A S C R I P T -->
 <script src="js/main.js"></script>
+
+<!-- G O O G L E-->
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBinG4Ekyoyjmp2yDiUrf1Y3hvL7BO-MDE&callback=initMap">
 </script>
