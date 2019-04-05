@@ -3,6 +3,8 @@
     $('#governmentwrap').hide()
     $('#populationwrap').hide()
     $('#scientistwrap').hide()
+    $('#refguide').hide()
+    $('#smallpox').hide()
     // M A I N   T A B S 
     $('#martial').on('click', ()=>{
         if(toggle === true){
@@ -23,10 +25,37 @@
             $('title').hide()
             toggle = false
         }
-        console.log('working')
         $('#scientistwrap').toggle("slow")
     })
-    
+    // C D C   C O N T R O L  B T N S 
+    $('#action').on('click', ()=>{
+        if(toggle === true){
+            $('title').hide()
+            toggle = false
+        }
+        $('#refcodes').toggle("slow")
+    })
+    $('#guide').on('click', ()=>{
+        if(toggle === true){
+            $('title').hide()
+            toggle = false
+        }
+        $('#refguide').toggle("slow")
+    })
+                        $('#D1').on('click', ()=>{
+                            if(toggle === true){
+                                $('title').hide()
+                                toggle = false
+                            }
+                            $('#smallpox').toggle()
+                        })
+    $('#solutions').on('click', ()=>{
+        if(toggle === true){
+            $('title').hide()
+            toggle = false
+        }
+        $('#emgsolutions').toggle("slow")
+    })
     //  C I T Y   L O G 
     var citymap = [
     {

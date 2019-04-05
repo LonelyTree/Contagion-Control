@@ -45,7 +45,7 @@ p {
     border-radius: 10%;
 }
 /* E N D   P R O G R E S S    B A R */
-/* G O O G L E   M A P S  B T N  R E M O V E */
+/* G O O G L E   M A P S  B  UT N  R E M O V E */
 .gm-control-active{
     display:none;
 }
@@ -59,14 +59,14 @@ nav {
     display: flex;
     justify-content: flex-start;
 }
-/* E N D   G O O G L E   M A P S  B T N  R E M O V E */
+/* E N D   G O O G L E   M A P S  B U T N  R E M O V E */
 
-/* M A I N   B T N   S E L C T  W R A P*/
+/* M A I N   B U T N   S E L C T  W R A P*/
 #wrapper { 
     position: absolute;
     width: 41.5%;
     display: inline-flex;
-    padding-top: 3%;
+    padding-top: 1%;
     justify-content: inherit;
     padding-left: 4%;
     flex-direction: column;
@@ -83,9 +83,9 @@ nav {
     margin-left: 2%;
     background: white;
 }
-/* E N D   M A I N   B T N   S E L C T  W R A P*/
+/* E N D   M A I N   B U T N   S E L C T  W R A P*/
 
-/* M A I N   B T N   S E L C T */
+/* M A I N   B U T N   S E L C T */
 #section {
     display: inherit;
     width: 100%;
@@ -104,9 +104,9 @@ nav {
     font-family: monospace;
     font-size: large;
 }
-/* E N D   M A I N   B T N   S E L C T */
+/* E N D   M A I N   B U T N   S E L C T */
 
-/* G O V N M T   W R A P */
+/* G O V N M T   W R A P R */
 #governmentwrap{
     width: 86.122222%;
     height: 40vh;
@@ -114,7 +114,7 @@ nav {
     background: rgb(98, 7, 7,.7);
     position: relative;
     z-index: 3;
-    border-radius: 0px 0px 50px 50px;
+    border-radius: 0px 0px 10px 10px;
     border: solid;
     text-align: center;
 }
@@ -144,9 +144,9 @@ nav {
     border-radius: 4px;
     box-shadow: 0px 0px 20px 1px;
 }
-/* E N D   G O V N M T   W R A P */
+/* E N D   G O V N M T   W R A P R */
 
-/* P O P L T N   W R A P */
+/* P O P L T N   W R A P R */
 
 #populationwrap{
     width: 64.1222%;
@@ -155,7 +155,7 @@ nav {
     background: rgba(98, 7, 7, 0.7);
     position: relative;
     z-index: 3;
-    border-radius: 0px 0px 50px 50px;
+    border-radius: 0px 0px 10px 10px;
     border: solid;
     text-align: center;
     margin-left: 15%;
@@ -170,7 +170,7 @@ nav {
     margin-top: -2%;
 }
 
-/* E N D   P O P L T N   W R A P */
+/* E N D   P O P L T N   W R A P R */
 
 /* S C I   W R A P */
 #scientistwrap{
@@ -180,7 +180,7 @@ nav {
     background: rgb(98, 7, 7,.7);
     position: relative;
     z-index: 3;
-    border-radius: 0px 0px 50px 50px;
+    border-radius: 0px 0px 10px 10px;
     border: solid;
     text-align: center;
 }
@@ -229,8 +229,66 @@ nav {
 #bad{
     background: #607d8b00;
 }
+/* S U B   B T N S */
 
-/* E N D  S C I   W R A P */
+/* R E F   C O D E   B U T N */
+#action {
+
+}
+#refCodes {
+
+}
+/* N B C A A  R E F F E R  B U T N */
+#guide {
+
+}
+#refguide {
+    width: 246%;
+    height: 59vh;
+    margin-left: 73%;
+    margin-top: 41%;
+    margin-right: -159%;
+    background: rgb(98, 7, 7,.7);
+    position: absolute;
+    z-index: 3;
+    border-radius: 10px;
+    border: solid;
+    text-align: center
+}
+.disease {
+    cursor: pointer;
+    z-index: 5;
+    line-height: 22px;
+    padding: .2% .5% .2% .3%;
+    background-color: #e5f403cf;
+    border-radius: 0px 20px 0px 15px;
+    text-align: center;
+    border: dashed;
+    border-color: #050505;
+    font-family: monospace;
+    font-size: large;
+}
+li {
+    display: flex;
+    padding-left: 2%;
+    width: 115%;
+}
+.h1name {
+    font-size: -webkit-xxx-large;
+    width: 16%;
+    background: coral;
+    border-radius: 15px 15px 0px 0px;
+}
+
+
+/* E M E R G E N C Y  B U T N */
+#solutions {
+
+}
+#emgsolutions {
+    
+}
+/* E N D  S C I   W R A P R */
 
 
 
