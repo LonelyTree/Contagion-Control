@@ -3,6 +3,9 @@
     $('#governmentwrap').hide()
     $('#populationwrap').hide()
     $('#scientistwrap').hide()
+    // R E F   C O D E S
+    $('#refcodes').hide()
+    // R E F   G U I D E
     $('#refguide').hide()
     $('#smallpox').hide()
     // M A I N   T A B S 
@@ -56,6 +59,148 @@
         }
         $('#emgsolutions').toggle("slow")
     })
+    // C D C   R E F  C O D E  L I B R A R Y
+
+    // PROPPER FORMAT = 
+    //CDCREF#1 = {desc: "Description of event here",
+    //            type: "type of pathogen here",
+    //            govern: "number of severity",
+    //            public: "number of severity",
+    //            cure: "number of severity"}
+    // 
+    //
+    //
+    //
+    //             need function to check if government is used and if so, to add 
+    //             public unrest every few turns
+
+/*
+    D E F I N E 
+    
+
+    VIRUS
+
+    DISPATCH VIRAL SAMPLE AQISITION TEAM
+
+    BACTERIA
+
+    DISPATCH BARCTERIAL SAMPLE AQUISITION TEAM
+
+    D E F I N E  - A L L
+
+    Deploy field medics for contagion sample aquisition.
+
+    L E S S E N
+
+    VIRUS
+
+    Distribute antiviral drugs.
+
+    Dispersal of anti-viral cloud via helicopter.
+
+    Deploy Viral Containment Team (VCT).
+
+    BACTERIA
+
+    "Allocate deployable disinfection sites"
+
+    "Deploy sanitation M113APC for widespread disinfection"
+
+    "Restock medical staff with anti-biotics"
+
+    L E S S E N - A L L
+
+    "Close bus routes."
+
+    Shut-down subways.
+
+    Shut down local gatherings.
+
+    Distribute bottled water.
+
+    Distribute deployable clinics.
+
+    Distribute N95 particulate face masks.
+
+    Increase flow of Doctors in ER.
+
+    I N C R E A S E - A L L
+
+    Hold city meeting to discuss disease.
+
+    Allow important city festival to start
+
+    Provide access to mobile atm platforms
+
+    Distribute emergency rations AT CENTRAL LOCATION
+
+*/
+/*
+P U B L I C 
+
+CALM
+
+Send out CDC representatives as community outreach and education.
+-1 public unrest every turn
+
+Deploy information fliers. 
+-1 public unrest every two turns
+
+Governor (double) tour through affected area
+-3 public unrest
+
+Install high-bandwith cell-towers
+-2 public unrest +1 government
+
+Provide access to mobile atm platforms
+-2 public unrest +2 disease
+
+RESTRAIN 
+(no increase of public unrest for that turn, but +1 government)
+
+Deploy military with all field medical staff
+
+Deploy roadblocks for high flow areas
+
+Increase HAZMAT equiped military enforcement
+
+INCITE
+
+Any military action will cause rioting the longer the disease goes uncured
++1 public unrest every two turns
+
+Send false information about a cure. 
++3 public unrest in two turns
+
+Kidnap people infected for further testing of cure
++3 cure +5 public unrest in two turns
+
+*/     
+/* 
+G O V E R N M E N T
+
+FOCUS
+Train medical professionals in advanced care
++1 cure -1 public unrest
+
+Train civilians to report infections
+-1 public unrest per turn
+
+Hold television conference for community to voice concerns
+-1 public unrest per turn
+
+ENFORCE
+
+Strict Curfew
++1 government and +1 public unrest per turn
+
+Military blockade of transport
++1 government and +1 public unrest per turn
+
+HAZMAT equipt tank column occupation
++2 government and +2 public unrest
+*/
+
     //  C I T Y   L O G 
     var citymap = [
     {

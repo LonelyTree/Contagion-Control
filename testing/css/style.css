@@ -235,9 +235,52 @@ nav {
 #action {
 
 }
-#refCodes {
+#refcodes {
+    width: 126%;
+    height: 37vh;
+    margin-top: 41%;
+    margin-left: 14%;
+    margin-right: -159%;
+    background: rgb(98, 7, 7,.7);
+    position: absolute;
+    z-index: 3;
+    border-radius: 10px;
+    border: solid;
+
+    text-align: center;
+}
+.codeswrapper {
+    width: 100%;
+    margin-top: 1.3%;
+    height: 93%;
+    background: rgba(136, 206, 249, 0.79);
+    justify-content: space-around;
+    
+}
+.codesdiv {
+    display: inline-flex;
+    width: 100%;
+}
+.pathogen,.public,.government {
+    width: -webkit-fill-available;
+}
+.refcodehead {
+    font-size: 146%;
+    font-family: monospace;
+    border-radius: 3px;
+}
+.public ul li {
+    margin-left: 20%;
+}
+.government ul li {
 
 }
+.codesdiv ul li{
+    justify-content: flex-start;
+    font-family: monospace;
+    font-size: 127%;
+}
+
 /* N B C A A  R E F F E R  B U T N */
 #guide {
 
