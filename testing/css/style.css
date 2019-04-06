@@ -1,4 +1,55 @@
 
+/* M O D A L*/
+.hide {
+    display: none;
+}
+.horror {
+    display: none;
+}
+.end {
+    color: red;
+    background: black
+}
+#modl {
+    display:none;
+}
+    
+
+.blocker{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 6;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.82);
+    text-align: center;
+}
+.modal{
+
+    background: #000000c7;
+    width: 100%;
+    height: auto;
+}
+.modal p{
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0px 0px 30px 2px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    margin-left: -1%;
+    height: auto;
+    text-align: start;
+    background: rgba(0, 118, 76, 1);
+    border: none;
+    color: #00ff90;
+}
 
 /* P R O G R E S S    B A R */
 progress[value] {
@@ -150,24 +201,19 @@ nav {
 
 #populationwrap{
     width: 64.1222%;
-    height: 18vh;
-    /* margin-right: -145%; */
+    height: 34vh;
     background: rgba(98, 7, 7, 0.7);
     position: relative;
     z-index: 3;
+    justify-content: center;
     border-radius: 0px 0px 10px 10px;
     border: solid;
     text-align: center;
-    margin-left: 15%;
-}
-#scope {
-    width: 65%;
-    margin-left: 15%;
-    border-radius: 10%;
-    border: solid;
+    margin-left: 14%;
+    margin-top: -0.331%;
 }
 #progpeop {
-    margin-top: -2%;
+    margin-top: -6%;
 }
 
 /* E N D   P O P L T N   W R A P R */
@@ -269,16 +315,48 @@ nav {
     font-family: monospace;
     border-radius: 3px;
 }
+.href ul li p {
+    font-size: large;
+    margin-bottom: -14%;
+    margin-top: 16%;
+    border: none;
+    background: none;
+}
+a {
+color: black;
+}
 .public ul li {
     margin-left: 20%;
 }
 .government ul li {
 
 }
+.pathogen ul li:active{
+    background:coral
+}
+.pathogen ul li:hover{
+    background:coral
+}
+.public ul li:active{
+    background:#2b86e269;
+}
+.public ul li:hover{
+    background:#2b86e269;
+}
+.government ul li:active{
+    background: #eddb64;
+}
+.government ul li:hover{
+    background: #eddb64;
+}
+
 .codesdiv ul li{
+    cursor: pointer;
     justify-content: flex-start;
     font-family: monospace;
     font-size: 127%;
+    width: 99%;
+    box-shadow: 0px 0px 0px 1px;
 }
 
 /* N B C A A  R E F F E R  B U T N */
@@ -329,7 +407,43 @@ li {
 
 }
 #emgsolutions {
-    
+    width: 40%;
+    height: 39vh;
+    margin-top: 41%;
+    margin-left: 74%;
+    margin-right: -159%;
+    background: rgba(0, 0, 0, 0.73);
+    position: absolute;
+    z-index: 3;
+    border-radius: 10px;
+    border: solid;
+    text-align: center;
+}
+.solutionswrapper {
+    width: 100%;
+    padding-top: 0%;
+    margin-top: 7.3%;
+    height: 89%;
+    background: white;
+}
+.solutionsdiv {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+.saveearth li:hover {
+    box-shadow: 0px 0px 0px 1px;
+    border: red dashed;
+    background: black;
+    color: red;
+    border-radius: 3px 3px 3px 3px;
+    margin-top: 39%;
+}
+.saveearth li {
+    box-shadow: 0px 0px 0px 1px;
+    border: red dashed;
+    border-radius: 3px 3px 3px 3px;
+    margin-top: 39%;
 }
 /* E N D  S C I   W R A P R */
 
