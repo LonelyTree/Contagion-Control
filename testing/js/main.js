@@ -170,22 +170,10 @@ setTimeout(function(){
 },1000);
     })
 
-    // let i = 0;
-    // let txt = ""; /* The text */
-    // let speed = 50; /* The speed/duration of the effect in milliseconds */
-
-    // function typeWriter(string) {
-    //     if (i < string.length) {
-    //         $("#e1 p").text($("#e1 p").text() += string.charAt(i));
-    //         i++;
-    //         setTimeout(typeWriter, speed);
-    //     }
-    // }
     // C D C   R E F  C O D E  L I B R A R Y
 
     // PROPPER FORMAT = 
-    //CDCREF#1 = {desc: "Description of event here",
-    //            type: "type of pathogen here",
+    //CDCREF#1 =  {type: "type of pathogen here",
     //            govern: "number of severity",
     //            public: "number of severity",
     //            cure: "number of severity"}
@@ -304,28 +292,137 @@ G O V E R N M E N T
 
 FOCUS
 Train medical professionals in advanced care
-+1 cure -1 public unrest -1 desease
++1 cure -1 public unrest -3 government -1 desease
 
 Train civilians to report infections
--1 public unrest per turn -1 disease
+-1 public unrest per turn  -1 government -1 disease
 
 Hold television conference for community to voice concerns
--2 public unrest per turn
+-2 public unrest per turn -3 government
 
 ENFORCE
 
 Strict Curfew
-+1 government and +1 public unrest per turn 
++2 government and +1 public unrest per turn -3 disease
 
 Military blockade of transport
-+1 government and +1 public unrest per turn 0  Disease for that turn 
++1 government and +1 public unrest per turn  -2 Disease
 
 HAZMAT equipt tank column occupation
-+2 government and +2 public unrest 0 Disease for that turn
++2 government and +2 public unrest  -4 disease
 */
+ordersArray = 
+[
+    //D E F I N E 
 
-    //  C I T Y   L O G 
-    var citymap = [
+    // VIRUS
+    {name:"A1REF",disease:0,public:0,government:0,cure:1, kind: "virus"},
+    // BACTERIA
+    {name:"A2REF",disease:0,public:0,government:0,cure:1, kind: "bacteria"},
+
+    // D E F I N E -- A L L
+    {name:"A3REF",disease:0,public:0,government:0,cure:1, kind:null},
+
+    // L E S S E N   S P E C  D I S E A S E
+
+    // VIRUS
+    {name:"A4REF",disease:-1,public:0,government:0,cure:2, kind: "virus"},
+    {name:"A6REF",disease:-1,public:0,government:1,cure:2, kind: "virus"},
+    {name:"A8REF",disease:0,public:0,government:0,cure:2, kind:"virus"},
+
+    // BACTERIA
+    {name:"A5REF",disease:-1,public:0,government:0,cure:2, kind: "bacteria"},
+    {name:"A7REF",disease:-1,public:0,government:0,cure:2, kind: "bacteria"},
+    {name:"A9REF",disease:-1,public:0,government:0,cure:1, kind: "bacteria"},
+
+    // L E S S E N - A L L   D I S E A S E S
+    {name:"A10REF",disease:-1,public:-2,government:0,cure:1, kind:null},
+    {name:"B1REF",disease:-1,public:-2,government:0,cure:1, kind:null},
+    {name:"B2REF",disease:-3,public:-2,government:0,cure:1, kind:null},
+    {name:"B3REF",disease:-1,public:-1,government:0,cure:0, kind:null},
+    {name:"B4REF",disease:-1,public:-1,government:0,cure:2, kind:null},
+    {name:"B5REF",disease:-3,public:-1,government:0,cure:1, kind:null},
+    {name:"B6REF",disease:-2,public:-1,government:0,cure:2, kind:null},
+    
+    //I N C R E A S E - A L L   D I S E A S E S
+    {name:"B7REF",disease:4,public:2,government:2,cure:0, kind:null},
+    {name:"B8REF",disease:5,public:2,government:4,cure:0, kind:null},
+    {name:"B9REF",disease:6,public:3,government:2,cure:0, kind:null},
+    {name:"B10REF",disease:7,public:-1,government:4,cure:0, kind:null},
+    
+    // P U B L I C 
+
+    // CALM
+    {name:"PB1REF",disease:2,public:-5,government:0,cure:0, kind:null},
+    {name:"PB2REF",disease:0,public:-4,government:3,cure:0, kind:null},
+    {name:"PB4REF",disease:0,public:-2,government:1,cure:0, kind:null},
+    {name:"PB5REF",disease:0,public:-2,government:0,cure:3, kind:null},
+    {name:"PB9REF",disease:2,public:-2,government:0,cure:0, kind:null},
+
+    // R E S T R A I N
+    {name:"PB3REF",disease:0,public:-5,government:0,cure:0, kind:null}, // false info about cure
+    {name:"PB6REF",disease:0,public:4,government:0,cure:3, kind:null},
+    {name:"PB7REF",disease:-1,public:3,government:3,cure:0, kind:null},
+    {name:"PB8REF",disease:-3,public:3,government:2,cure:1, kind:null},
+    {name:"PB10REF",disease:-3,public:2,government:2,cure:2, kind:null},
+    
+    // G O V E R N M E N T
+
+    // FOCUS
+    {name:"GT1REF",disease:-3,public:-3,government:-3,cure:4, kind:null},
+    {name:"GT3REF",disease:-3,public:0,government:0,cure:3, kind:null},
+    {name:"GT4REF",disease:-3,public:-3,government:-2,cure:3, kind:null},
+
+
+    // ENFORCE
+    {name:"GT2REF",disease:-3,public:3,government:2,cure:0, kind:null},
+    {name:"GT5REF",disease:-2,public:3,government:3,cure:0, kind:null},
+    {name:"GT6REF",disease:-3,public:5,government:5,cure:0, kind:null},
+    
+    // E M E R G E N C Y   P R O T O C O L
+
+    // E M E R G E N C Y   C O R R E C T I O N S
+    {name:"EM2REF",disease:-20,public:10,government:7,cure:7, kind:null},
+    {name:"EM3REF",disease:-15,public:10,government:10,cure:7, kind:null},
+    {name:"EM5REF",disease:-20,public:20,government:20,cure:10, kind:null},
+
+    // G A M E   E N D I N G  C H O I C E S
+    {name:"EM1REF",disease:0,public:0,government:0,cure:0, kind:"end"},
+    {name:"EM4REF",disease:0,public:0,government:0,cure:0, kind:"end"},
+    {name:"EM6REF",disease:0,public:0,government:0,cure:0, kind:"end"},
+    {name:"EM7REF",disease:0,public:0,government:0,cure:0, kind:"end"},
+    {name:"EM8REF",disease:0,public:0,government:0,cure:0, kind:"end"},
+]
+//////////////   R E F   C O D E   S U B M I T   ////////////////////////////
+
+$('#govsub').click(()=>{
+    let orders = $('#gov').val()
+    var index = ordersArray.findIndex(function(ref){
+        return ref.name === orders
+    })
+diseaseCount += ordersArray[index].disease
+publicUnrest += ordersArray[index].public
+governmentAbility += ordersArray[index].government
+cureCount += ordersArray[index].cure
+
+})
+//////////// T U R N   C O U N T ////////////////////////////////////////////
+var turnCount = 0; // max is 10
+
+//////////// T U R N   C O U N T ////////////////////////////////////////////
+var cureCount = 0; // max is 20
+
+//////////// D I S E A S E   C O U N T ////////////////////////////////////////////
+var diseaseCount = 0; // max is 30 // every three numbers the disease counter goes up.
+
+//////////// P U B L I C  U N R E S T  C O U N T ////////////////////////////////////////////
+var publicUnrest = 0; // max is 30
+
+//////////// G O V E R N M E N T   C O U N T ////////////////////////////////////////////
+var governmentAbility = 0; // max is 30
+
+///////////////////  C I T Y   L O G  ///////////////////////////////////////////
+var citymap = [
     {
         name: 'chicago',
         center: {lat: 41.878, lng: -87.629},
@@ -389,17 +486,97 @@ HAZMAT equipt tank column occupation
     }
 ];
 
-const selectedCity = citymap[Math.floor(Math.random() * citymap.length)]
+///////////////////  C H O O S E  T H E   C I T Y ////////////////////////////////////
+var selectedCity = citymap[Math.floor(Math.random() * citymap.length)]
 
 
-    function initMap() {
-        // Create the map.
-        var map = new google.maps.Map(document.getElementById('map'), {
-            // zoom: (selectedCity.area <= 250) ? 14 : 10.25,
-            zoom: (selectedCity.area <= 250) ? 13 : (selectedCity.area <= 350) ? 12 : (selectedCity.area <= 500) ? 11 : (selectedCity.area <= 750) ? 10.75 : (selectedCity.area <= 1000) ? 10 : 10.25,
-            center: selectedCity.center,
-            mapTypeId: 'terrain'
-        });
+//////////// C I T Y  P O P U L A T I O N ////////////////////////////////////////////
+var cityPopulation = (selectedCity.area + 2600) ** 2
+//////////// D I S E A S E   S Y M P T O M   B I N ////////////////////////////////////////////
+var symptoms = [];
+//////////// D I S E A S E   T Y P E ////////////////////////////////////////////
+var diseases = [
+    {name: "CHIMERIC Smallpox",
+    symptoms: {1: 'Malaise',
+    2: 'Severe headache',
+    3: 'Backache',
+    4: 'Vomiting',
+    5: 'Diarrhoea:',
+    6: 'Sudden onset of high fever and agression',
+    7: 'Widespread skin rash',
+    8: 'Skin rash changed into raised bumps',
+    9: 'Bumps changed into fluid filled blisters',
+    10: 'Blisters have scabbed over'},
+    infectionRate: (.45),
+}
+
+]
+//////////////////// C O R E   L O G I C ////////////////////////////
+
+///////////////    M A K I N G    W R O N G  C H O I C E S   ////////////////////////
+if ((turnCount - diseaseCount) > 1 && (turnCount - diseaseCount) < 2){
+    publicUnrest += 1
+    governmentAbility +=2
+} else if ((turnCount - diseaseCount) >= 2 && (turnCount - diseaseCount) <= 4){
+    publicUnrest += 2
+    governmentAbility +=2
+} else if ((turnCount - diseaseCount) >= 5){
+    publicUnrest += 5
+    governmentAbility +=5
+} 
+
+///////////////   M A K I N G    R I G H T  C H O I C E S  ////////////////////////
+if ((diseaseCount - turnCount) > 1 && (diseaseCount - turnCount) <=2){
+    publicUnrest -= 1
+    governmentAbility -= 1
+    cureCount += 3
+} else if ((diseaseCount - turnCount) > 2 && (diseaseCount - turnCount) <=4){
+    publicUnrest -= 3
+    governmentAbility -= 3
+    cureCount += 5
+} else if ((diseaseCount - turnCount) > 2 && (diseaseCount - turnCount) <=4){
+    publicUnrest -= 5
+    governmentAbility -= 4
+    cureCount += 7
+} 
+
+
+///////////////   P U B L I C   U N R E S T  L V L  ////////////////////////
+if ((publicUnrest) > 1 && (publicUnrest) <= 5){
+    governmentAbility += 1
+} else if ((publicUnrest) > 5 && (publicUnrest) <= 10){
+    governmentAbility += 2
+    diseaseCount += 1
+} else if ((publicUnrest) > 10 && (publicUnrest) <= 20){
+    governmentAbility += 3
+    diseaseCount += 3
+}   
+///////////////   G O V E R N M E N T     L V L  ////////////////////////
+if ((governmentAbility) > 1 && (governmentAbility) <= 5){
+    publicUnrest += 1;
+    cureCount += .5;
+} else if ((governmentAbility) > 5 && (governmentAbility) <= 10){
+    publicUnrest += 2
+    cureCount += 1
+} else if ((governmentAbility) > 10 && (governmentAbility) <= 20){
+    publicUnrest += 3
+    cureCount += 1
+}   
+
+// determining appearance of symptoms
+
+(diseaseCount / 3)
+
+///////////////////  M A K E   T H E  M A P ////////////////////////////////////
+
+function initMap() {
+    // Create the map.
+    var map = new google.maps.Map(document.getElementById('map'), {
+        // zoom: (selectedCity.area <= 250) ? 14 : 10.25,
+        zoom: (selectedCity.area <= 250) ? 13 : (selectedCity.area <= 350) ? 12 : (selectedCity.area <= 500) ? 11 : (selectedCity.area <= 750) ? 10.75 : (selectedCity.area <= 1000) ? 10 : 10.25,
+        center: selectedCity.center,
+        mapTypeId: 'terrain'
+    });
 
 // G O O G L E   M A P S    C I R C L E
 

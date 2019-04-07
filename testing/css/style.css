@@ -254,7 +254,6 @@ nav {
     width: 26%;
 }
 .cure {
-    cursor: pointer;
     z-index: 5;
     line-height: 22px;
     margin: 0% 2.778%;
@@ -278,9 +277,9 @@ nav {
 /* S U B   B T N S */
 
 /* R E F   C O D E   B U T N */
-#action {
+/* #action {
 
-}
+} */
 #refcodes {
     width: 126%;
     height: 37vh;
@@ -328,9 +327,9 @@ color: black;
 .public ul li {
     margin-left: 20%;
 }
-.government ul li {
+/* .government ul li {
 
-}
+} */
 .pathogen ul li:active{
     background:coral
 }
@@ -360,9 +359,9 @@ color: black;
 }
 
 /* N B C A A  R E F F E R  B U T N */
-#guide {
+/* #guide {
 
-}
+} */
 #refguide {
     width: 246%;
     height: 59vh;
@@ -403,9 +402,9 @@ li {
 
 
 /* E M E R G E N C Y  B U T N */
-#solutions {
+/* #solutions {
 
-}
+} */
 #emgsolutions {
     width: 40%;
     height: 39vh;
