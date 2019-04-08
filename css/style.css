@@ -1,0 +1,476 @@
+
+/* M O D A L*/
+.hide {
+    display: none;
+}
+.horror {
+    display: none;
+}
+.end {
+    color: red;
+    background: black
+}
+#modl {
+    display:none;
+}
+    
+
+.blocker{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 6;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.82);
+    text-align: center;
+}
+.modal{
+
+    background: #000000c7;
+    width: 100%;
+    height: auto;
+}
+.modal p{
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0px 0px 30px 2px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    margin-left: -1%;
+    height: auto;
+    text-align: start;
+    background: rgba(0, 118, 76, 1);
+    border: none;
+    color: #00ff90;
+}
+
+/* P R O G R E S S    B A R */
+progress[value] {
+    -webkit-appearance: none;
+    width: 54%;
+    height: 2.39vh;
+    box-sizing: border-box;
+    display: inline-block;
+}
+progress[value]::-webkit-progress-bar {
+    background-color:black;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+    background-image:
+        -webkit-linear-gradient(top,
+        rgba(255, 255, 255, 0),
+        rgba(207, 0, 0, 0.25)),
+        -webkit-linear-gradient(left, rgb(255, 235, 58), #f44);
+
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+#med {
+    margin-top: 0%;
+}
+.progbardiv{
+    margin-top: 10%;
+    margin-left: 1%;
+    height: 7%;
+    display: inline-flex;
+    width: 92%;
+    align-items: center;
+    justify-content: center;
+
+}
+p {
+    padding:0% 1%;
+    font-size: x-large;
+    font-family: monospace;
+    background: coral;
+    border: groove;
+    border-radius: 10%;
+}
+/* E N D   P R O G R E S S    B A R */
+/* G O O G L E   M A P S  B  UT N  R E M O V E */
+.gm-control-active{
+    display:none;
+}
+.gm-style-mtc{
+    display:none;
+}
+.gm-svpc{
+    display: none;
+}
+nav {
+    display: flex;
+    justify-content: flex-start;
+}
+/* E N D   G O O G L E   M A P S  B U T N  R E M O V E */
+
+/* M A I N   B U T N   S E L C T  W R A P*/
+#wrapper { 
+    position: absolute;
+    width: 41.5%;
+    display: inline-flex;
+    padding-top: 1%;
+    justify-content: inherit;
+    padding-left: 4%;
+    flex-direction: column;
+}
+#titlewrapper {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    height: 30%;
+}
+#title {
+    width: 96%;
+    height: 30vh;
+    margin-left: 2%;
+    background: white;
+}
+/* E N D   M A I N   B U T N   S E L C T  W R A P*/
+
+/* M A I N   B U T N   S E L C T */
+#section {
+    display: inherit;
+    width: 100%;
+    justify-content: flex-start;
+}
+.floating-panel {
+    cursor: pointer;
+    z-index: 5;
+    line-height: 22px;
+    padding: .4% 3% .6% 2%;
+    background-color: #e5f403cf;
+    border-radius: 0px 20px 0px 15px;
+    text-align: center;
+    border: dashed;
+    border-color: #050505;
+    font-family: monospace;
+    font-size: large;
+}
+/* E N D   M A I N   B U T N   S E L C T */
+
+/* G O V N M T   W R A P R */
+#governmentwrap{
+    width: 86.122222%;
+    height: 40vh;
+    margin-left: 4%;
+    background: rgb(98, 7, 7,.7);
+    position: relative;
+    z-index: 3;
+    border-radius: 0px 0px 10px 10px;
+    border: solid;
+    text-align: center;
+}
+#government {
+    width: 64%;
+    margin-top: 9%;
+    background: yellow;
+    border: coral dashed 5px;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0px 0px 30px 10px;
+    border-radius: 4px 4px;
+}
+#gov { 
+    width: 80%;
+    margin: 10px;
+    font-size: 22.79px;
+    background: black;
+    color: coral;
+}
+#govsub {
+    background: #b62424;
+    width: 51%;
+    font-size: xx-large;
+    font-family: monospace;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px 1px;
+}
+/* E N D   G O V N M T   W R A P R */
+
+/* P O P L T N   W R A P R */
+
+#populationwrap{
+    width: 64.1222%;
+    height: 34vh;
+    background: rgba(98, 7, 7, 0.7);
+    position: relative;
+    z-index: 3;
+    justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    border: solid;
+    text-align: center;
+    margin-left: 14%;
+    margin-top: -0.331%;
+}
+#progpeop {
+    margin-top: -6%;
+}
+
+/* E N D   P O P L T N   W R A P R */
+
+/* S C I   W R A P */
+#scientistwrap{
+    width: 86.122222%;
+    height: 27vh;
+    margin-left: 4%;
+    background: rgb(98, 7, 7,.7);
+    position: relative;
+    z-index: 3;
+    border-radius: 0px 0px 10px 10px;
+    border: solid;
+    text-align: center;
+}
+
+#scitab2{
+    display: inline-flex;
+    flex-flow: wrap;
+    justify-content: center;
+    height: 19%;
+}
+#action,#guide,#solutions {
+    cursor: pointer;
+    z-index: 5;
+    line-height: 22px;
+    margin: 0% 2.778%;
+    margin-top: 5%;
+    background-color: #e5611c;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+    box-shadow: 0px 0px 4px 1px;
+    border: solid;
+    border-color: lightcoral;
+    font-family: monospace;
+    font-size: large;
+    width: 26%;
+}
+.cure {
+    z-index: 5;
+    line-height: 22px;
+    margin: 0% 2.778%;
+    margin-top: 5%;
+    background-color: #59feffb5;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+    box-shadow: 0px 0px 4px 1px;
+    border: inset;
+    border-color: lightcoral;
+    font-family: monospace;
+    font-size: large;
+    width: 26%;
+}
+#good {
+    background: #325bac85;
+}
+#bad{
+    background: #607d8b00;
+}
+/* S U B   B T N S */
+
+/* R E F   C O D E   B U T N */
+/* #action {
+
+} */
+#refcodes {
+    width: 126%;
+    height: 37vh;
+    margin-top: 41%;
+    margin-left: 14%;
+    margin-right: -159%;
+    background: rgb(98, 7, 7,.7);
+    position: absolute;
+    z-index: 3;
+    border-radius: 10px;
+    border: solid;
+
+    text-align: center;
+}
+.codeswrapper {
+    width: 100%;
+    margin-top: 1.3%;
+    height: 93%;
+    background: rgba(136, 206, 249, 0.79);
+    justify-content: space-around;
+    
+}
+.codesdiv {
+    display: inline-flex;
+    width: 100%;
+}
+.pathogen,.public,.government {
+    width: -webkit-fill-available;
+}
+.refcodehead {
+    font-size: 146%;
+    font-family: monospace;
+    border-radius: 3px;
+}
+.href ul li p {
+    font-size: large;
+    margin-bottom: -14%;
+    margin-top: 16%;
+    border: none;
+    background: none;
+}
+a {
+color: black;
+}
+.public ul li {
+    margin-left: 20%;
+}
+/* .government ul li {
+
+} */
+.pathogen ul li:active{
+    background:coral
+}
+.pathogen ul li:hover{
+    background:coral
+}
+.public ul li:active{
+    background:#2b86e269;
+}
+.public ul li:hover{
+    background:#2b86e269;
+}
+.government ul li:active{
+    background: #eddb64;
+}
+.government ul li:hover{
+    background: #eddb64;
+}
+
+.codesdiv ul li{
+    cursor: pointer;
+    justify-content: flex-start;
+    font-family: monospace;
+    font-size: 127%;
+    width: 99%;
+    box-shadow: 0px 0px 0px 1px;
+}
+
+/* N B C A A  R E F F E R  B U T N */
+/* #guide {
+
+} */
+#refguide {
+    width: 246%;
+    height: 59vh;
+    margin-left: 73%;
+    margin-top: 41%;
+    margin-right: -159%;
+    background: rgb(98, 7, 7,.7);
+    position: absolute;
+    z-index: 3;
+    border-radius: 10px;
+    border: solid;
+    text-align: center
+}
+.disease {
+    cursor: pointer;
+    z-index: 5;
+    line-height: 22px;
+    padding: .2% .5% .2% .3%;
+    background-color: #e5f403cf;
+    border-radius: 0px 20px 0px 15px;
+    text-align: center;
+    border: dashed;
+    border-color: #050505;
+    font-family: monospace;
+    font-size: large;
+}
+li {
+    display: flex;
+    padding-left: 2%;
+    width: 115%;
+}
+.h1name {
+    font-size: -webkit-xxx-large;
+    width: 16%;
+    background: coral;
+    border-radius: 15px 15px 0px 0px;
+}
+
+
+/* E M E R G E N C Y  B U T N */
+/* #solutions {
+
+} */
+#emgsolutions {
+    width: 40%;
+    height: 39vh;
+    margin-top: 41%;
+    margin-left: 74%;
+    margin-right: -159%;
+    background: rgba(0, 0, 0, 0.73);
+    position: absolute;
+    z-index: 3;
+    border-radius: 10px;
+    border: solid;
+    text-align: center;
+}
+.solutionswrapper {
+    width: 100%;
+    padding-top: 0%;
+    margin-top: 7.3%;
+    height: 89%;
+    background: white;
+}
+.solutionsdiv {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+.saveearth li:hover {
+    box-shadow: 0px 0px 0px 1px;
+    border: red dashed;
+    background: black;
+    color: red;
+    border-radius: 3px 3px 3px 3px;
+    margin-top: 39%;
+}
+.saveearth li {
+    box-shadow: 0px 0px 0px 1px;
+    border: red dashed;
+    border-radius: 3px 3px 3px 3px;
+    margin-top: 39%;
+}
+/* E N D  S C I   W R A P R */
+
+
+
+
+
+
+
+
+
+
+ /* G O O G L E   M A P S */
+/* Always set the map height explicitly to define the size of the div
+element that contains the map. */
+
+#map {
+height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+input {
+    width: 40%;
+}
+

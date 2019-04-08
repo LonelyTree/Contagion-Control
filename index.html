@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- J Q U E R Y -->
+
+<script 
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</script>
+
+<!-- J Q U E R Y   M O D A L-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+<!--  -->
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+
+
+<title>Contagion Control</title>
+
+</head>
+<body>
+    
+    <!-- M O D A L S    M O D A L S    M O D A L S    M O D A L S     -->
+
+<!-- Modal HTML embedded directly into document -->
+
+<!-- Link to open the modal -->
+<!-- <p><a href="#ex1" rel="modal:open">Open Modal</a></p> -->
+<div id="e1" class="modal">
+<p></p>
+<a href="#" rel="modal:close"></a>
+
+</div>
+<p id="modl"><a href="#e1" id="open"  rel="modal:open"></a></p>
+
+
+<div id="a1" class="modal">
+<p style= "background: black; color: red;"></p>
+<a href="#" rel="modal:close"></a>
+
+</div>
+<p id="modl"><a href="#a1" id="end"  rel="modal:open"></a></p>
+
+<!-- M O D A L S    M O D A L S    M O D A L S    M O D A L S     -->
+<nav>
+    <div id="wrapper" >
+        <div id="section">
+            <div id="martial"  class="floating-panel">Martial Law Procedures</div>
+            <div id="peop"     class="floating-panel">Public Data</div>
+            <div id="sci"      class="floating-panel">CDC Emergency Response</div>
+        </div>
+<!-- G O V E R N M E N T   T A B  -->
+            <div id="titlewrapper"></div>
+        
+            <div id="governmentwrap" class="tabcontent">
+                <div id="government">
+                    <input type="text" id="gov" placeholder="//CDC~EOCIMS@.REF~CODE//"><br><input id="govsub" type="submit" value="Submit">
+                </div>
+                <div class="progbardiv">
+                    <p>Calm</p>
+                    <progress id="govtolerance" value=10 max=40></progress>
+                    <p>Hostile</p>
+                </div>
+            </div>
+                
+<!-- P O P U L A T I O N    T A B -->
+            <div id="populationwrap" class="tabcontent">
+                <div id="population">
+                    <div id="popinfect">
+                        <p style="
+                        border-radius: 4px 4px 4px 4px;
+                        border: none;
+                        width: 45%;
+                        margin-left: 27.6%;
+                        background: #87cefa94;"
+                        >Healthy Population</p>
+                        <p id="hpop" style="
+                        border-radius: 4px 4px 4px 4px;
+                        border: none;
+                        width: 41%;
+                        margin-left: 29%;
+                        background: #000000b3;
+                        color: #0097e6b0;;
+                        margin-top: -4%;"
+                        >0</p>
+                        <p style="
+                        border-radius: 4px 4px 4px 4px;
+                        border: none;
+                        width: 38%;
+                        font-size: large;
+                        margin-left: 31%;
+                        background: #af26266e;
+                        margin-top: -4%;"
+                        >Infected Population</p>
+                        <p id="ipop" style="
+                        border-radius: 4px 4px 4px 4px;
+                        border: none;
+                        width: 41%;
+                        margin-left: 29%;
+                        background: #000000b3;
+                        color:#7f0404;
+                        margin-top: -4%;"
+                        >0</p>
+                    </div>
+                    <div id="scope">
+                        <p style="
+                        border-radius: 4px 4px 4px 4px;
+                        border: none;
+                        width: 57%;
+                        margin-left: 21%;"
+                        >Public Reactivity Scope</p>
+                    </div>
+                    <div id="progpeop" class="progbardiv"><p>Calm</p>
+                        <progress id="peoptolerance" value=10 max=40></progress>
+                        <p>Frantic</p>
+                    </div>
+                </div>
+            </div>
+        
+<!-- S C I E N T I S T   T A B -->
+            <div id="scientistwrap" class="tabcontent">
+                <div id="scitab">
+                    <div id="scitab2">
+                    <!-- 2 N D   B T N S -->
+                            <div 
+                            id="action" class="tabcontent">EOCIMS Ref. Codes
+                            </div>
+                            <div 
+                            id="guide" class="tabcontent">NBACC Contagion Ref. Guide
+                            </div>
+                            <div 
+                            id="solutions" class="tabcontent">//EMNBACC PROTOCOL//
+                            </div>
+                            <div class="cure">Cure Research</div>
+                            <div id="med" class="progbardiv">
+                                <p id="bad">Undeveloped</p>
+                                <progress id="cureprogress" value=10 max=40></progress>
+                                <p id="good">Distributed</p>
+                            </div>
+
+<!-- 3 R D  B T N S --><!-- 3 R D  B T N S --> <!-- 3 R D  B T N S --> 
+
+<!-- C D C  R E F  C O D E S --><!-- C D C  R E F  C O D E S --><!-- C D C  R E-->
+                                    <div id="refcodes" class="tabcontent">
+                                        <div class="codeswrapper">
+                                            <div class="codesdiv" >
+                                                <div class="pathogen" style="
+                                                width: 82%;">
+                                                    <h1 class="refcodehead"style="
+                                                    background: coral;
+                                                    margin-bottom: -15%; "
+                                                >Contagion
+                                                    </h1>
+                                                    <div class="href" style="
+                                                    display: inline-block;
+                                                    margin-top: 10%;
+                                                    margin-left: -22%;">
+                                                    <ul style="
+                                                    margin-top: 26%;">
+                                                    <li>A1REF
+                                                        <p class="hide">Dispatch Viral Sample Aquisition Team (VSAT).</p>
+                                                    </li>
+                                                    <li>A2REF
+                                                        <p class="hide">Dispatch Bacterial Sample Aquisition Team (BSAT).</p>
+                                                    </li>
+                                                    <li> A3REF
+                                                            <p class="hide">Deploy field medics for contagion sample aquisition.</p>
+                                                    </li>
+                                                    <li> A4REF
+                                                            <p class="hide">Distribute antiviral drugs.</p>
+                                                    </li>
+                                                    <li> A5REF
+                                                            <p class="hide">Allocate deployable bacterial disinfection sites.</p>
+                                                    </li>
+                                                    <li> A6REF
+                                                            <p class="hide">Initiate dispersal of anti-viral cloud via helicopter.</p>
+                                                    </li>
+                                                    <li> A7REF
+                                                            <p class="hide">Deploy sanitation M113APC for widespread disinfection.</p>
+                                                    </li>
+                                                    <li> A8REF
+                                                            <p class="hide">Deploy Viral Containment Team (VCT).</p>
+                                                    </li>
+                                                    <li> A9REF
+                                                            <p class="hide">Restock medical staff with anti-biotics.</p>
+                                                    </li>
+                                                    <li>A10REF
+                                                            <p class="hide">Issue immediate closure of bus routes.</p>
+                                                    </li>
+                                                    </ul>
+                                                    </div>
+                                                    <div class="href" style="
+                                                display: inline-block;">
+                                                    <ul>
+                                                    <li> B1REF
+                                                        <p class="hide">Order full shut-down subways.</p>
+                                                    </li>
+                                                    <li> B2REF
+                                                        <p class="hide">Issue mandates that ban local gatherings.</p>
+                                                    </li>
+                                                    <li> B3REF
+                                                        <p class="hide">Distribute bottled water to clinics.</p>
+                                                    </li>
+                                                    <li> B4REF
+                                                        <p class="hide">Distribute deployable clinics throughout hot-zones.</p>
+                                                    </li>
+                                                    <li> B5REF
+                                                        <p class="hide">Distribute N95 particulate face masks.</p>
+                                                    </li>
+                                                    <li> B6REF
+                                                        <p class="hide">Increase flow of Doctors in ER.</p>
+                                                    </li>
+                                                    <li> B7REF
+                                                        <p class="hide">Hold City Council meeting to discuss symptoms of disease.</p>
+                                                    </li>
+                                                    <li> B8REF
+                                                        <p class="hide">Allow important city festival to start.</p>
+                                                    </li>
+                                                    <li> B9REF
+                                                        <p class="hide">Relocate possibly infected to nearest sports field and quarantine.</p>
+                                                    </li>
+                                                    <li>B10REF
+                                                        <p class="hide">Allow transport of healthy people through city on CDC shuttles..</p>
+                                                    </li>
+                                                    </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="public" style="
+                                                width: 76%;">
+                                                    <h1 class="refcodehead" style="
+                                                    background:#2b86e269;;
+                                                    margin-bottom: 3%;"
+                                                >Public Relations
+                                                    </h1>
+                                                    <div class="href" style="
+                                                    display: inline-flex;
+                                                    width: 48%;
+                                                    margin-left: -32%;
+                                                    margin-top: 0%;">
+                                                    <ul>
+                                                        <li>PB1REF
+                                                            <p class="hide">Send the Governor's double to tour through affected area.</p>
+                                                        </li>
+                                                        <li>PB2REF
+                                                            <p class="hide">Install high-bandwith cell-towers for ease of comminication.</p>
+                                                        </li>
+                                                        <li>PB3REF
+                                                            <p class="hide">Spread false information about a developed cure.</p>
+                                                        </li>
+                                                        <li>PB4REF
+                                                            <p class="hide">Distribute informational fliers via air..</p>
+                                                        </li>
+                                                        <li>PB5REF
+                                                            <p class="hide">Send out CDC representatives for community outreach and education..</p>
+                                                        </li>
+                                                        <li>PB6REF
+                                                            <p class="hide">Kidnap the infected homeless for further testing of cure.</p>
+                                                        </li>
+                                                        <li>PB7REF
+                                                            <p class="hide">Increase HAZMAT equiped military enforcement.</p>
+                                                        </li>
+                                                        <li>PB8REF
+                                                            <p class="hide">Deploy roadblocks for high flow areas.</p>
+                                                        </li>
+                                                        <li>PB9REF
+                                                            <p class="hide">Provide access to mobile atm platforms.</p>
+                                                        </li>
+                                                        <li>PB10REF
+                                                            <p class="hide">Deploy military with all field medical staff.</p>
+                                                        </li>
+                                                    </ul>
+                                                    </div>
+                                                    <div class="href" style="
+                                                    display: inline-flex;">
+                                                    <ul>
+                                                        <li>PB11REF
+                                                            <p class="hide">Issue mandatory testing for infection.</p>
+                                                        </li>
+                                                    </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="government" style="
+                                                width: 76%;">
+                                                    <h1 class="refcodehead" style="
+                                                    background: #eddb64;"
+                                                >GovernmentActions
+                                                    </h1>
+                                                    <div class="href">
+                                                    <ul style="
+                                                        margin-top: 9%;
+                                                        margin-left: -9%;
+                                                        width: 38%;">
+                                                        <li>GT1REF
+                                                            <p class="hide">Train medical professionals in advanced care.</p>
+                                                        </li>
+                                                        <li>GT2REF
+                                                            <p class="hide">Issue a Military blockade for the halt of transport in and out of the city.</p>
+                                                        </li>
+                                                        <li>GT3REF
+                                                            <p class="hide">Train civilians to notice and report infections.</p>
+                                                        </li>
+                                                        <li>GT4REF
+                                                            <p class="hide">Hold city-wide television conference for community to voice concerns.</p>
+                                                        </li>
+                                                        <li>GT5REF
+                                                            <p class="hide">Issue strict curfew.</p>
+                                                        </li>
+                                                        <li>GT6REF
+                                                            <p class="hide">Institute HAZMAT equipt ABHRAMS tank column occupation.</p>
+                                                        </li>
+                                                    </ul>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+<!-- D I S E A S E S --><!-- D I S E A S E S --><!-- D I S E A S E S -->
+                                    <div id="refguide" class="tabcontent">
+    
+                                        <nav>
+                                            <div id="D1" class="disease" class="tabcontent">#NBACC CASE 1#
+                                            </div>
+                                            <div id="D2" class="disease">#NBACC CASE 2#</div>
+                    <!-- D I S E A S E   S P E C S -->
+                                        </nav>
+                                        
+                                        <div id="smallpox" class="tabcontent" style="
+                                                width: 100%;
+                                                height: 88%;
+                                                display: inline-flex;
+                                                justify-content: space-around;
+                                                background: #7bcdff94;
+                                        "><h1 class="h1name" style="
+                                        display: inline-block;
+                                        margin-top: 1%;
+                                        margin-bottom: 22%;
+                                        border-style: dashed solid;
+                                        border-radius: 7px 7px 7px 7px;
+                                        font-family: monospace;"
+                                            >CHIMERIC Smallpox</h1>
+                                    <div class="start" style="
+                                            text-align: center;
+                                            width: 25%;
+                                            margin-top: 6%;
+                                            font-family: monospace;
+                                            margin-right: 20%;"
+                                            >
+                                            <h1 class="h1" style="
+                                                    width: 100%;
+                                                    margin-top: -3%;
+                                                "
+                                            >Symptoms</h1>
+                                                <ul class="" style="
+                                                    font-size: large;
+                                                    font-family: monospace;
+                                                    margin-left: -9%;
+                                                ">
+                                                    <li>1. Malaise</li>
+                                                    <li>2. Severe headache</li>
+                                                    <li>3. Backache</li>
+                                                    <li>4. Abdominal pain</li>
+                                                    <li>5. Vomiting</li>
+                                                    <li>6. Diarrhoea.</li>
+                                                    <li>7. Sudden onset of high fever and agression</li>
+                                                    <li>8. Widespread skin rash</li>
+                                                <li>9. Skin rash changed into raised bumps</li>
+                                                    <li>10. Bumps changed into fluid filled blisters</li>
+                                                    <li>11. Blisters have scabbed over</li>
+                                                </ul>
+                                            </div>
+                                            <div class="middle" style="
+                                                    width: 8%;
+                                                    margin-left: -16%;
+                                                    margin-right: 8%;
+                                                    font-family: monospace;
+                                                    margin-top: 4.29%;">
+                                                <h1 class="h1" 
+                                            >Infectivity Rate</h1>
+                                                <p id="infrate"
+                                            >2</p>
+                                                <h1 class="h1"
+                                            >Mortality Rate</h1>
+                                                <p id="mortrate"
+                                            >.3</p>
+                                        </div>
+                                        <div style="
+                                                display: inline-block;
+                                                margin-right: 8%;
+                                                justify-content: center;
+                                                width: 22%;
+                                                height: 100%;
+                                                font-family: monospace;
+                                                text-align: start;">
+                                            <h1 class="h1" style="
+                                                width: 100%;
+                                                font-size: x-large;
+                                                margin-left: 12%;"
+                                            >Treatment</h1>
+                                            <ul class="ul" style="font-size: large;">
+                                                <li class="treatment">1. Isolate patients possibly infected with smallpox virus in negative-pressure rooms under airborne precautions and vaccinate them within the first 4 days after exposure. Supportive and symptomatic treatment (eg, hydration, nutrition) should be provided.</li>
+                                                <li class="treatment">2. No known treatment is effective for smallpox. Medical management of smallpox is mainly supportive. Focus on containment </li>
+                                                <li class="treatment">3. Unless the diagnosis of smallpox is confirmed in a laboratory, patients should receive smallpox vaccination if they will be isolated with other patients with confirmed or suspected smallpox, to prevent accidental transmission.</li>
+                                            </ul>
+                                            
+                                        </div>
+                                            </div>
+                                    </div>
+
+                                    <div id="emgsolutions" class="tabcontent">
+                                            <div class="solutionswrapper">
+                                                <div class="solutionsdiv" >
+                                                    <div class="emergency" style="
+                                                    width: 82%;">
+                                                        <h1 class="refcodehead"style="
+                                                        background: black;
+                                                        margin-bottom: -19%;
+                                                        margin-top: 3%;
+                                                        color: red;"
+                                                    > EMNBACC PROTOCOL// SAVE EARTH
+                                                        </h1>
+                                                        <div class="href" style="
+                                                            display: inline-flex;
+                                                            margin-top: 17%;
+                                                            justify-content: center;
+                                                            margin-left: -2%;">
+                                                            <div class="saveearth" style="
+                                                            margin-left: -33%;">
+                                                                <ul style="
+                                                                margin-top: 26%;">
+                                                                <li>EM1REF
+                                                                    <p class="hide">Via B-21 STELTH bomber equipt with MIRV class lightweight payloads carrying nerve-agent VX-NOVCOK-99...Strike infected city at zero-hundred hours for effective sterilization... Hazmat equipt borderteam to kill on sight any remaining targets.</p>
+                                                                    <p class="horror">The Hazmat Search Team will search and destroy any remaining source of the disease. Your superiors have a sample and are working on a cure, but the un-countable dead do not care. You failed. </p>
+                                                                </li>
+                                                                <li>EM2REF
+                                                                    <p class="hide">Burn the bodies of the deceased...</p>
+                                                                </li>
+                                                                <li>EM3REF
+                                                                    <p class="hide">Hazamat Border Team to shoot on sight.</p>
+                                                                </li>
+                                                                <li>EM4REF
+                                                                    <p class="hide">Via B-21 STELTH bomber equipt with NEUTRON-star payload. Release 10km over target city. Eradicate all organic matter.</p>
+                                                                    <p class="horror">The Hazmat Search Team will search and destroy any remaining source of the disease. Your superiors have a sample and are working on a cure, but the un-countable dead do not care. You failed. </p>
+                                                                </li>
+                                                            </ul>
+                                                            </div>
+                                                            <div class="saveearth" style="
+                                                                margin-left: 7%;">
+                                                                <ul>
+                                                                <li>EM5REF
+                                                                    <p class="hide">Utilize kill-drones to stop civilians from breaching quarantine...</p>
+                                                                </li>
+                                                                <li>EM6REF
+                                                                    <p class="hide">Inject food rations for the public with CHIMERA class Botulism-XA... Any survivors are to be taken away for laboratory testing...</p>
+                                                                    <p class="horror">The Hazmat Search Team will search and destroy any remaining source of the disease. Your superiors have a sample and are working on a cure, but the un-countable dead do not care. You failed. </p>
+                                                                </li>
+                                                                <li>EM7REF
+                                                                    <p class="hide">Via WHO Water Treatment Vehicle, deploy CHIMERA class Botulism-XA into local water supply... Any survivors are to be taken away for laboratory testing and disection.</p>
+                                                                    <p class="horror">The Hazmat Search Team will search and destroy any remaining source of the disease. Your superiors have a sample and are working on a cure, but the un-countable dead do not care. You failed... You monster... </p>
+                                                                </li>
+                                                                <li>EM8REF
+                                                                    <p class="hide">Introduce agressive organic solvent via airborne misting vehicles in the city for manditory ten days... Any surviors approaching the vehicles during this time are to be shot on sight... Surviving locals must be sent to lab for testing and sterilization...</p>
+                                                                    <p class="horror">The Hazmat Search Team will search and destroy any remaining source of the disease. Your superiors have a sample and are working on a cure, but the un-countable dead do not care. You failed... You monster... </p>
+                                                                </li>
+                                                                </ul>
+                                                            </div>
+                                    
+                    </div>
+                    
+                    
+                </div>
+                <div>
+
+                </div>
+
+                </div>
+
+            </div>
+        </div>          
+    </div>
+</nav>
+<!-- F A K E   T E R M I N A L -->
+
+
+
+<!-- G O O G L E   M A P S-->
+<div id="map">
+        
+</div>
+
+
+<!-- J A V A S C R I P T -->
+<script src="js/main.js"></script>
+
+<!-- G O O G L E   W/  -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBinG4Ekyoyjmp2yDiUrf1Y3hvL7BO-MDE&libraries=visualization&callback=initMap">
+</script>
+<!-- G O O G L E   V I S U A L I Z A T I O N   L I B R A R Y -->
+
+
+</body>
+</html>
