@@ -87,7 +87,7 @@
             }
         $('#smallpox').toggle()
     })
-//////////////////////////  E M E R G E N C Y   S O L U T I O N S /////////////
+////////////////  E M E R G E N C Y   S O L U T I O N S ///////////////////////
     $('#solutions').on('click', ()=>{
             if(solutions === true){
                 $('#solutions').css('background',"#000000").css("color","red")
@@ -98,7 +98,9 @@
         $('#emgsolutions').toggle("slow")
     })
 
-/////////// M O D A L   E M N B A C C  P R O T O C O L ////////////////////////////////////////////////////////
+/////////// M O D A L   E M N B A C C  P R O T O C O L ////////////////////////////////
+
+
 $('.saveearth li').click((e) => {
     var $sentence = " "
     var $target = $(e.target);
@@ -172,150 +174,13 @@ setTimeout(function(){
 },1000);
     })
 
-    // C D C   R E F  C O D E  L I B R A R Y
+// E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  L I B 
+// E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  L I B 
+// E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  L I B 
 
-    // PROPPER FORMAT = 
-    //CDCREF#1 =  {type: "type of pathogen here",
-    //            govern: "number of severity",
-    //            public: "number of severity",
-    //            cure: "number of severity"}
-    // 
-    //
-    //
-    //
-    //             need function to check if government is used and if so, to add 
-    //             public unrest every few turns
-
-/*
-    D E F I N E 
-    
-
-    VIRUS
-
-    DISPATCH VIRAL SAMPLE AQISITION TEAM
-
-    BACTERIA
-
-    DISPATCH BARCTERIAL SAMPLE AQUISITION TEAM
-
-    D E F I N E  - A L L
-
-    Deploy field medics for contagion sample aquisition.
-
-    L E S S E N
-
-    VIRUS
-
-    Distribute antiviral drugs.
-
-    Dispersal of anti-viral cloud via helicopter.
-
-    Deploy Viral Containment Team (VCT).
-
-    BACTERIA
-
-    "Allocate deployable bacterial disinfection sites"
-
-    "Deploy sanitation M113APC for widespread disinfection"
-
-    "Restock medical staff with anti-biotics"
-
-    L E S S E N - A L L
-
-    "Close bus routes."
-
-    Shut-down subways.
-
-    Shut down local gatherings.
-
-    Distribute bottled water.
-
-    Distribute deployable clinics.
-
-    Distribute N95 particulate face masks.
-
-    Increase flow of Doctors in ER.
-
-    I N C R E A S E - A L L
-
-    
-    Hold city meeting to discuss disease.
-
-    Allow important city festival to start
-
-    Provide access to mobile atm platforms
-
-    Distribute emergency rations AT CENTRAL LOCATION
-
-*/
-/*
-P U B L I C 
-
-CALM
-
-Send out CDC representatives as community outreach and education.
--1 public unrest every turn -1 disease
-
-Deploy information fliers. 
--1 public unrest every two turns
-
-Governor (double) tour through affected area
--3 public unrest
-
-Install high-bandwith cell-towers
--2 public unrest +1 government
-
-Provide access to mobile atm platforms
--2 public unrest +2 disease
-
-RESTRAIN 
-(no increase of public unrest for that turn, but +1 government)
-
-Deploy military with all field medical staff
-
-Deploy roadblocks for high flow areas -1 disease
-
-Increase HAZMAT equiped military enforcement
-
-INCITE
-
-Any military action will cause rioting the longer the disease goes uncured
-+1 public unrest every two turns
-
-Send false information about a cure. 
-+3 public unrest in two turns
-
-Kidnap people infected for further testing of cure
-+3 cure +5 public unrest in two turns
-
-*/     
-/* 
-G O V E R N M E N T
-
-FOCUS
-Train medical professionals in advanced care
-+1 cure -1 public unrest -3 government -1 desease
-
-Train civilians to report infections
--1 public unrest per turn  -1 government -1 disease
-
-Hold television conference for community to voice concerns
--2 public unrest per turn -3 government
-
-ENFORCE
-
-Strict Curfew
-+2 government and +1 public unrest per turn -3 disease
-
-Military blockade of transport
-+1 government and +1 public unrest per turn  -2 Disease
-
-HAZMAT equipt tank column occupation
-+2 government and +2 public unrest  -4 disease
-*/
 ordersArray = 
 [
-    //D E F I N E 
+    //D E F I N E  
 
     // VIRUS
     {name:"A1REF",disease:0,public:0,government:0,cure:1, kind: "virus"},
@@ -395,34 +260,69 @@ ordersArray =
     {name:"EM7REF",disease:0,public:0,government:0,cure:0, kind:"end"},
     {name:"EM8REF",disease:0,public:0,government:0,cure:0, kind:"end"},
 ]
+
+// E N D  E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  
+// E N D  E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  
+// E N D  E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  
+
+
+//////////////   R E F   C O D E   S U B M I T   ////////////////////////////
+//////////////   R E F   C O D E   S U B M I T   ////////////////////////////
 //////////////   R E F   C O D E   S U B M I T   ////////////////////////////
 
 $('#govsub').click(()=>{
     let orders = $('#gov').val()
+    infectedNum = infected * 10
     var index = ordersArray.findIndex(function(ref){
         return ref.name === orders
     })
+
+//// D E P E N D A N T   V A R I A B L E S ////
 diseaseCount += ordersArray[index].disease
 publicUnrest += ordersArray[index].public
-governmentAbility += ordersArray[index].government
+govtolerance += ordersArray[index].government
 cureCount += ordersArray[index].cure
 
+////  C O N S T.  V A R I A B L E S ////////
+
+turnCount++
+diseaseCount++
+infectPopulation()
+
+
+$('#hpop').text(cityPopulation)
+$('#ipop').text(infected)
+//////////////   P R O G R E S S   B A R S  ////////////////////////////
+//#cureprogress
+$('#cureprogress').val(cureCount)
+//#peoptolerance
+$('#peoptolerance').val(publicUnrest)
+//#govtolerance
+$('#govtolerance').val(govtolerance)
+
+infectPopulation()
+// TO DO:
+
+// include function that runs all the core logic
+
+// remove the code that was input from #gov from screen once submit is clicked
+
+// remove the code from the buttons on the options
+
+// don't make PROTOCOL available until disease > 26
+
+// create the diologue box in which we can see the events happening
+
+//connect the progress bars // C O M P L E T E 
+
+// make function that calculates infectivity and pushes it to the name. 
+// ? C O M P L E T E  ?  double-check on line. 416
 })
-//////////// T U R N   C O U N T ////////////////////////////////////////////
-var turnCount = 0; // max is 10
+//////////////  E N D   R E F   C O D E   S U B M I T   ////////////////////////////
+//////////////  E N D   R E F   C O D E   S U B M I T   /////////////////////////////////////////////  E N D   R E F   C O D E   S U B M I T   ////////////////////////////
 
-//////////// T U R N   C O U N T ////////////////////////////////////////////
-var cureCount = 0; // max is 20
-
-//////////// D I S E A S E   C O U N T ////////////////////////////////////////////
-var diseaseCount = 3; // max is 30 // every three numbers the disease counter goes up.
-
-//////////// P U B L I C  U N R E S T  C O U N T ////////////////////////////////////////////
-var publicUnrest = 0; // max is 30
-
-//////////// G O V E R N M E N T   C O U N T ////////////////////////////////////////////
-var governmentAbility = 0; // max is 30
-
+///////////////////  C I T Y   L O G  ///////////////////////////////////////////
+///////////////////  C I T Y   L O G  ///////////////////////////////////////////
 ///////////////////  C I T Y   L O G  ///////////////////////////////////////////
 var citymap = [
     {   name: "newyork",
@@ -476,16 +376,13 @@ var citymap = [
         ringSize: 350
     }
 ];
+/////////////////// E N D  C I T Y   L O G  //////////////////////////////////////
+/////////////////// E N D  C I T Y   L O G  //////////////////////////////////////
+/////////////////// E N D  C I T Y   L O G  //////////////////////////////////////
 
-///////////////////  C H O O S E  T H E   C I T Y ////////////////////////////////////
-var selectedCity = citymap[Math.floor(Math.random() * citymap.length)]
-
-
-//////////// C I T Y  P O P U L A T I O N ////////////////////////////////////////////
-var cityPopulation = (selectedCity.area + 2600) ** 2
-//////////// D I S E A S E   S Y M P T O M   B I N ////////////////////////////////////////////
-var symptoms = [];
-//////////// D I S E A S E   L I B R A R Y  ////////////////////////////////////////////
+//////////// D I S E A S E   L I B R A R Y  ///////////////////////////////////////
+//////////// D I S E A S E   L I B R A R Y  ///////////////////////////////////////
+//////////// D I S E A S E   L I B R A R Y  ///////////////////////////////////////
 var diseases = [
     {name: "CHIMERIC Smallpox",
     symptoms: {1: 'Malaise',
@@ -498,14 +395,102 @@ var diseases = [
     8: 'Skin rash changed into raised bumps',
     9: 'Bumps changed into fluid filled blisters',
     10: 'Blisters have scabbed over'},
-    infectionRate: (.45),
-}
-
+    infectionRate: (.3),}
 ]
-//////////// C H O O S E   D I S E A S E  ///////////////////////////////
+////////////  E N D  D I S E A S E   L I B R A R Y  ///////////////////////////////////
+////////////  E N D  D I S E A S E   L I B R A R Y  ///////////////////////////////////
+////////////  E N D  D I S E A S E   L I B R A R Y  ///////////////////////////////////
 
+
+///////////////  C O U N T S ///////////////  C O U N T S ///////////////  C O U N T S 
+///////////////  C O U N T S ///////////////  C O U N T S ///////////////  C O U N T S 
+///////////////  C O U N T S ///////////////  C O U N T S ///////////////  C O U N T S 
+
+//////////// T U R N   C O U N T ////////////////////////////////////////////
+var turnCount = 0; // max is 10
+
+//////////// T U R N   C O U N T ////////////////////////////////////////////
+var cureCount = 0; // max is 20
+
+//////////// D I S E A S E   C O U N T ////////////////////////////////////////////
+var diseaseCount = 3; // max is 30 // every three numbers the disease counter goes up.
+
+//////////// P U B L I C  U N R E S T  C O U N T //////////////////////////////////////
+var publicUnrest = 0; // max is 30
+
+//////////// G O V E R N M E N T   C O U N T //////////////////////////////////////////
+var govtolerance = 0; // max is 30
+
+//////////// I N F E C T E D  C O U N T //////////////////////////////////
+var infected = 1
+var infectedNum
+
+//////////// D E A D  C O U N T //////////////////////////////////
+var dead = 0;
+
+///////////////////  C H O O S E  T H E   C I T Y ////////////////////////////////////
+var selectedCity = citymap[Math.floor(Math.random() * citymap.length)]
+
+//////////// C I T Y  P O P U L A T I O N  C O U N T //////////////////////////////////
+var cityPopulation = (selectedCity.area + 2600) ** 2
+
+
+///////////////  E N D  C O U N T S ///////////////   E N D  C O U N T S  /////////////
+///////////////  E N D  C O U N T S ///////////////   E N D  C O U N T S  /////////////
+///////////////  E N D  C O U N T S ///////////////   E N D  C O U N T S  /////////////
+
+
+
+
+
+/// D I S E A S E   L O G I C /////////////////////////
+/// D I S E A S E   L O G I C /////////////////////////
+/// D I S E A S E   L O G I C /////////////////////////
+
+//////////// D I S E A S E   S Y M P T O M   B I N ////////////////////////////////////
+var symptoms = [];
+
+
+//////////// G E T  H E A L T H Y //////////////////////////////////
+
+
+//////////// C H O O S E   D I S E A S E  ///////////////////////////////
 // var randDisease = diseases[Math.floor(Math.random() * diseases.length-1)];
 var randDisease = diseases[0];
+
+///////////////////// I N F E C T I V I T Y   R A T E  ////////////////////
+var infectPopulation = function(){
+    for(let i=0; i < infectedNum; i++){
+        if(cureCount >= 7 && infected <= 10){
+            if((Math.floor(Math.random()*120)+1) <= 12){
+                infected++
+            }
+        }else if(cureCount >= 11 && cureCount <= 16){
+            if((Math.floor(Math.random()*150)+1) <= 15){
+                infected++
+            }
+        }else if(cureCount >= 17 && cureCount <= 25){
+            if((Math.floor(Math.random()*170)+1) <= 20){
+                infected++
+            }
+        }
+        else if((Math.floor(Math.random()*100)+1) <=10){
+            infected++
+        }else{continue;}   
+    }
+    dead = infected - (infected * .99)
+    cityPopulation -= infected;
+    infected = infected * .99
+    
+}
+// Need to give option to transfer infected back to healthy
+// Relation to cure slows infetion
+// show number of dead
+
+/////////  D E C L A R E   P O P U L A T I O N  HTML //////////
+$('#hpop').text(cityPopulation)
+$('#ipop').text(infected)
+
 ///////////// A P P E A R A N C E  O F  S Y M P T O M S //////////////
 
 var symptAppear = randDisease.symptoms[(diseaseCount / 3)]
@@ -514,53 +499,54 @@ holder.push(symptAppear)
 symptoms.push(holder)
 
 //////////////////// C O R E   L O G I C ////////////////////////////
+function fateOfCity(){}
 
 ///////////////    M A K I N G    W R O N G  C H O I C E S   ////////////////////////
 if ((turnCount - diseaseCount) > 1 && (turnCount - diseaseCount) < 2){
     publicUnrest += 1
-    governmentAbility +=2
+    govtolerance +=2
 } else if ((turnCount - diseaseCount) >= 2 && (turnCount - diseaseCount) <= 4){
     publicUnrest += 2
-    governmentAbility +=2
+    govtolerance +=2
 } else if ((turnCount - diseaseCount) >= 5){
     publicUnrest += 5
-    governmentAbility +=5
+    govtolerance +=5
 } 
 
 ///////////////   M A K I N G    R I G H T  C H O I C E S  ////////////////////////
 if ((diseaseCount - turnCount) > 1 && (diseaseCount - turnCount) <=2){
     publicUnrest -= 1
-    governmentAbility -= 1
+    govtolerance -= 1
     cureCount += 3
 } else if ((diseaseCount - turnCount) > 2 && (diseaseCount - turnCount) <=4){
     publicUnrest -= 3
-    governmentAbility -= 3
+    govtolerance -= 3
     cureCount += 5
 } else if ((diseaseCount - turnCount) > 2 && (diseaseCount - turnCount) <=4){
     publicUnrest -= 5
-    governmentAbility -= 4
+    govtolerance -= 4
     cureCount += 7
 } 
 
 
 ///////////////   P U B L I C   U N R E S T  L V L  ////////////////////////
 if ((publicUnrest) > 1 && (publicUnrest) <= 5){
-    governmentAbility += 1
+    govtolerance += 1
 } else if ((publicUnrest) > 5 && (publicUnrest) <= 10){
-    governmentAbility += 2
+    govtolerance += 2
     diseaseCount += 1
 } else if ((publicUnrest) > 10 && (publicUnrest) <= 20){
-    governmentAbility += 3
+    govtolerance += 3
     diseaseCount += 3
 }   
 ///////////////   G O V E R N M E N T     L V L  ////////////////////////
-if ((governmentAbility) > 1 && (governmentAbility) <= 5){
+if ((govtolerance) > 1 && (govtolerance) <= 5){
     publicUnrest += 1;
     cureCount += .5;
-} else if ((governmentAbility) > 5 && (governmentAbility) <= 10){
+} else if ((govtolerance) > 5 && (govtolerance) <= 10){
     publicUnrest += 2
     cureCount += 1
-} else if ((governmentAbility) > 10 && (governmentAbility) <= 20){
+} else if ((govtolerance) > 10 && (govtolerance) <= 20){
     publicUnrest += 3
     cureCount += 1
 }   
@@ -612,7 +598,7 @@ function initMap() {
         fillOpacity: 0.35,
         map: map,
         center: selectedCity.center,
-        radius: (selectedCity.ringSize *10) 
+        radius: (selectedCity.ringSize *6) 
         });
         // Q U A R A N T I N E  B O R D E R
         var cityCircle1 = new google.maps.Circle({
@@ -636,27 +622,29 @@ function initMap() {
 ////////////////  S T A R T  G A M E ///////////////////////
     
     if(diseaseCount > 5 && diseaseCount <=7){
-            for(let i=0; i < diseaseCount; i++){
+            for(let i=0; i < (diseaseCount-4); i++){
             selectedCity.center = selectedCity.center
-        randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
-                    Math.random() * (-0.020 - 0.0100) -.08,
-                    Math.random() * (-0.0120 - 0.005) - .04,
+        randomLat = [Math.random() * (-0.050 - 0.0400) -.099,
+                    Math.random() * (-0.040 - 0.0300) -.08,
+                    Math.random() * (-0.030 - 0.02) - .04,
                     Math.random() * (-0.0020 - 0.000) - .02,
+                    Math.random() * (-0.0010 - 0.000) - .02,
                     Math.random() * (0 - 0) +0,
-                    Math.random() * (0.030 + 0.0200) + .099,
-                    Math.random() * (0.020 + 0.0100)+ .08,
-                    Math.random() * (0.0120 + 0.005)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02]
+                    Math.random() * (0.050 + 0.0400) + .099,
+                    Math.random() * (0.040 + 0.0300)+ .08,
+                    Math.random() * (0.030 + 0.025)+ .04,
+                    Math.random() * (0.0020 + 0.000) + .02,
+                    Math.random() * (-0.0020 - 0.000) - .02,]
         randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
 
-        randomLng = [Math.random() * (-0.030 - 0.0200) -.099,
-                    Math.random() * (-0.020 - 0.0100) -.08,
-                    Math.random() * (-0.0120 - 0.005) - .04,
+        randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
+                    Math.random() * (-0.040 - 0.0300) -.08,
+                    Math.random() * (-0.030 - 0.02) - .04,
                     Math.random() * (-0.0020 - 0.000) - .02,
                     Math.random() * (0 - 0) +0,
-                    Math.random() * (0.030 + 0.0200) + .099,
-                    Math.random() * (0.020 + 0.0100)+ .08,
-                    Math.random() * (0.0120 + 0.005)+ .04,
+                    Math.random() * (0.050 + 0.0400) + .099,
+                    Math.random() * (0.040 + 0.0300)+ .08,
+                    Math.random() * (0.030 + 0.025)+ .04,
                     Math.random() * (0.0020 + 0.000) + .02]
         randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
         if(selectedCity.area < 310 && selectedCity.area > 200){
@@ -686,33 +674,35 @@ function initMap() {
         map: map,
         center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
         // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
-        radius: (selectedCity.area * (Math.random()*(4-2)))
+        radius: (selectedCity.area * (Math.random()*(3-1)))
         })};
 ////////////////  M I D D L E  G A M E ///////////////////////
 ////////////////  M I D D L E  G A M E ///////////////////////
 ////////////////  M I D D L E  G A M E ///////////////////////
     }else if (diseaseCount > 9 && diseaseCount <=15){
-        for(let i=0; i < diseaseCount; i++){
+        for(let i=0; i < (diseaseCount -6); i++){
             selectedCity.center = selectedCity.center
         randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
                     Math.random() * (-0.020 - 0.0100) -.08,
                     Math.random() * (-0.0120 - 0.005) - .04,
                     Math.random() * (-0.0020 - 0.000) - .02,
+                    Math.random() * (-0.0010 - 0.000) - .01,
                     Math.random() * (0 - 0) +0,
                     Math.random() * (0.030 + 0.0200) + .099,
                     Math.random() * (0.020 + 0.0100)+ .08,
                     Math.random() * (0.0120 + 0.005)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02]
+                    Math.random() * (0.0020 + 0.000) + .02,
+                    Math.random() * (0.0010 - 0.000) - .01,]
         randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
 
-        randomLng = [Math.random() * (-0.030 - 0.0200) -.099,
-                    Math.random() * (-0.020 - 0.0100) -.08,
-                    Math.random() * (-0.0120 - 0.005) - .04,
+        randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
+                    Math.random() * (-0.040 - 0.0300) -.08,
+                    Math.random() * (-0.030 - 0.02) - .04,
                     Math.random() * (-0.0020 - 0.000) - .02,
                     Math.random() * (0 - 0) +0,
-                    Math.random() * (0.030 + 0.0200) + .099,
-                    Math.random() * (0.020 + 0.0100)+ .08,
-                    Math.random() * (0.0120 + 0.005)+ .04,
+                    Math.random() * (0.050 + 0.0400) + .099,
+                    Math.random() * (0.040 + 0.0300)+ .08,
+                    Math.random() * (0.030 + 0.025)+ .04,
                     Math.random() * (0.0020 + 0.000) + .02]
         randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
         if(selectedCity.area < 310 && selectedCity.area > 200){
@@ -742,24 +732,26 @@ function initMap() {
         map: map,
         center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
         // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
-        radius: (selectedCity.area * (Math.random()*(4-2)))
+        radius: (selectedCity.area * (Math.random()*(4-3)))
         })};
 ////////////////  N E A R  E N D   G A M E ///////////////////////
 ////////////////  N E A R  E N D   G A M E ///////////////////////
 ////////////////  N E A R  E N D   G A M E ///////////////////////
 
     }else if(diseaseCount > 16 && diseaseCount <=23){
-        for(let i=0; i < diseaseCount; i++){
+        for(let i=0; i < diseaseCount - 5; i++){
             selectedCity.center = selectedCity.center
         randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
                     Math.random() * (-0.020 - 0.0100) -.08,
                     Math.random() * (-0.0120 - 0.005) - .04,
                     Math.random() * (-0.0020 - 0.000) - .02,
+                    Math.random() * (-0.0010 - 0.000) - .01,
                     Math.random() * (0 - 0) +0,
                     Math.random() * (0.030 + 0.0200) + .099,
                     Math.random() * (0.020 + 0.0100)+ .08,
                     Math.random() * (0.0120 + 0.005)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02]
+                    Math.random() * (0.0020 + 0.000) + .02,
+                    Math.random() * (0.0010 - 0.000) - .01,]
         randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
 
         randomLng = [Math.random() * (-0.030 - 0.0200) -.099,
@@ -799,33 +791,35 @@ function initMap() {
         map: map,
         center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
         // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
-        radius: (selectedCity.area * (Math.random()*(4-2)))
+        radius: (selectedCity.area * (Math.random()*(6-4)))
         })};
 ////////////////  E N D   G A M E ///////////////////////
 ////////////////  E N D   G A M E ///////////////////////
 ////////////////  E N D   G A M E ///////////////////////
     }else if(diseaseCount > 23){
-        for(let i=0; i < diseaseCount; i++){
+        for(let i=0; i < 20; i++){
             selectedCity.center = selectedCity.center
         randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
                     Math.random() * (-0.020 - 0.0100) -.08,
                     Math.random() * (-0.0120 - 0.005) - .04,
                     Math.random() * (-0.0020 - 0.000) - .02,
+                    Math.random() * (-0.0010 - 0.000) - .01,
                     Math.random() * (0 - 0) +0,
                     Math.random() * (0.030 + 0.0200) + .099,
                     Math.random() * (0.020 + 0.0100)+ .08,
                     Math.random() * (0.0120 + 0.005)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02]
+                    Math.random() * (0.0020 + 0.000) + .02,
+                    Math.random() * (0.0010 - 0.000) - .01,]
         randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
 
-        randomLng = [Math.random() * (-0.030 - 0.0200) -.099,
-                    Math.random() * (-0.020 - 0.0100) -.08,
-                    Math.random() * (-0.0120 - 0.005) - .04,
+        randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
+                    Math.random() * (-0.040 - 0.0300) -.08,
+                    Math.random() * (-0.030 - 0.02) - .04,
                     Math.random() * (-0.0020 - 0.000) - .02,
                     Math.random() * (0 - 0) +0,
-                    Math.random() * (0.030 + 0.0200) + .099,
-                    Math.random() * (0.020 + 0.0100)+ .08,
-                    Math.random() * (0.0120 + 0.005)+ .04,
+                    Math.random() * (0.050 + 0.0400) + .099,
+                    Math.random() * (0.040 + 0.0300)+ .08,
+                    Math.random() * (0.030 + 0.025)+ .04,
                     Math.random() * (0.0020 + 0.000) + .02]
         randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
         if(selectedCity.area < 310 && selectedCity.area > 200){
@@ -855,10 +849,10 @@ function initMap() {
         map: map,
         center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
         // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
-        radius: (selectedCity.area * (Math.random()*(4-2)))
+        radius: (selectedCity.area * (Math.random()*(8-5)))
         })};
 
-    }
+    }else {return}
     }
     )
     }
