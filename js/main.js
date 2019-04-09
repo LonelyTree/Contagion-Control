@@ -1,5 +1,6 @@
-    src="../mercator_projection.js.js"
+
     // submit button 319
+
     // I N F O   T A B ////////////////////////////////////////////////
     var toggle = true;
     var martial = true;
@@ -11,6 +12,7 @@
     var d1 = true;
     var solutions = true;
     var solutionsEnabled = false
+    var saveEarth = false
     
     $('#governmentwrap').hide()
     $('#populationwrap').hide()
@@ -105,9 +107,10 @@
         $('#solutions').css('background','grey')
     }
     $('#solutions').on('click', ()=>{
-///////////// S T A R T  M O D A L ///////////// S T A R T  M O D A L
-///////////// S T A R T  M O D A L ///////////// S T A R T  M O D A L
-///////////// S T A R T  M O D A L ///////////// S T A R T  M O D A L
+/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
+/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
+/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
+
         if(solutionsEnabled === false){
             $('#end').trigger('click')
         ////// F A D E   E F F E C T /////////////
@@ -155,6 +158,8 @@
     })
 
 /////////// M O D A L   E M N B A C C  P R O T O C O L ////////////////////////////////
+/////////// M O D A L   E M N B A C C  P R O T O C O L ////////////////////////////////
+/////////// M O D A L   E M N B A C C  P R O T O C O L ////////////////////////////////
 
 
 $('.saveearth li').click((e) => {
@@ -193,7 +198,10 @@ setTimeout(function(){
 },2000);
     })
         
-/////////// M O D A L S ////////////////////////////////////////////////////////
+/////////// M A I N  C H O I C E  M O D A L S /////////////////////////////////////////
+/////////// M A I N  C H O I C E  M O D A L S /////////////////////////////////////////
+/////////// M A I N  C H O I C E  M O D A L S /////////////////////////////////////////
+
 $('.codesdiv ul li').click((e) => {
     var $sentence = " "
     var $target = $(e.target);
@@ -309,16 +317,35 @@ $ordersArray =
     {name:"EM5REF",disease:-20,public:20,government:20,cure:10, kind:"horrible"},
 
     // G A M E   E N D I N G  C H O I C E S
-    {name:"EM1REF",disease:0,public:0,government:0,cure:0, kind:"end"},
-    {name:"EM4REF",disease:0,public:0,government:0,cure:0, kind:"end"},
-    {name:"EM6REF",disease:0,public:0,government:0,cure:0, kind:"end"},
-    {name:"EM7REF",disease:0,public:0,government:0,cure:0, kind:"end"},
-    {name:"EM8REF",disease:0,public:0,government:0,cure:0, kind:"end"},
+    {name:"EM1REF",disease:-100,public:-100,government:-100,cure:-100, kind:"end"},
+    {name:"EM4REF",disease:-100,public:-100,government:-100,cure:-100, kind:"end"},
+    {name:"EM6REF",disease:-100,public:-100,government:-100,cure:-100, kind:"end"},
+    {name:"EM7REF",disease:-100,public:-100,government:-100,cure:-100, kind:"end"},
+    {name:"EM8REF",disease:-100,public:-100,government:-100,cure:-100, kind:"end"},
+
+    // D E V  T O O L S --- S H H H  S E C R E T
+    // Disease 40
+    {name:"df",disease:40,public:0,government:0,cure:0, kind:"dev"},
+    // Disease 0
+    {name:"d0",disease:-40,public:0,government:0,cure:0, kind:"dev"},
+    // Government 40
+    {name:"gf",disease:0,public:0,government:40,cure:0, kind:"dev"},
+    // Government 0
+    {name:"g0",disease:0,public:0,government:-40,cure:0, kind:"dev"},
+    // Public 40
+    {name:"pf",disease:0,public:40,government:0,cure:0, kind:"dev"},
+     // Public 0
+    {name:"p0",disease:0,public:-40,government:0,cure:0, kind:"dev"},
+     // Cure 25
+    {name:"cf",disease:0,public:0,government:0,cure:25, kind:"dev"},
 ]
 
 // E N D  E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  
 // E N D  E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  
 // E N D  E V E N T S  L I B R A R Y //// E V E N T S  L I B R A R Y //// E V E N T S  
+
+////////  L O G  E V E N T S  U S E R  C O N S O L E ///////////////
+////////  L O G  E V E N T S  U S E R  C O N S O L E ///////////////
 
 
 //////////////   R E F   C O D E   S U B M I T   ////////////////////////////
@@ -327,11 +354,12 @@ $ordersArray =
 
 
 $('#govsub').click(()=>{
-    let $orders = $('#gov').val()
+    var $orders = $('#gov').val()
     infectedNum = infected * 10
     var index = $ordersArray.findIndex(function(ref){
         return ref.name === $orders
     })
+    var array = $ordersArray[index] // declare for use in console
 
 ////  C O N S T.  V A R I A B L E S ////////
 turnCount++
@@ -354,27 +382,9 @@ showsympt()
 /////////////  D I S T R O   C U R E
 distroCure()
 /////////////  E M N B A C C  P R O T O C O L
-// saveearth() 
-
+saveearth() 
 fullPopulationDeath()
 
-//////////////  D I S E A S E  C O R O L A T I O N  ////////////////////////////
-if($ordersArray[index].kind === randDisease.type){
-    // This is where we tell them that their decsion was good and the desease has slowed down!
-}
-else if($ordersArray[index].kind === "good"){
-    // Tell them that their choice has had a relatively good impact on the state of things!
-}else if($ordersArray[index].kind === "bad"){
-    // Tell them that their choice was not in the best interest of the health of the public
-}else if($ordersArray[index].kind === "horrible"){
-    // Tell them that they may have doomed the city
-} else if($ordersArray[index].kind === "great"){
-    // Tell them that they should recieve a commendation for their wonderful efforts!
-}else if($ordersArray[index].kind === "none"){
-    // Tell them that sometimes evils are neccessary.
-}else if (if$ordersArray[index].kind != randDisease.type){
-    // This is where we tell them that their decision did nothing to stop the disease from spreading! Look into the reference guide for further research!
-}
 
 //////////////   P R O G R E S S   B A R S  ////////////////////////////
 //#cureprogress
@@ -397,6 +407,516 @@ $('#gov').val("");
 //////////////  E N D  R E M O V E   I N P U T  &  R E F  C O D E ////////////////////
 
 
+/////////////  T E R M I N A L   L O G S /////////////  T E R M I N A L   L O G S 
+/////////////  T E R M I N A L   L O G S /////////////  T E R M I N A L   L O G S 
+/////////////  T E R M I N A L   L O G S /////////////  T E R M I N A L   L O G S 
+// G O V E R N M E N T 
+var governmentType="";
+//40
+// HORRIBLE
+if($ordersArray[index].government >= 3 && govtolerance <= 10){
+    governmentType ="Government: is insulted by your decision and has started its own internal planning department..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government >= 3 && govtolerance <= 20){
+        governmentType ="Government: has been secretly gathering samples of the disease and transporting them through the city..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government >= 3 && govtolerance <= 30){
+        governmentType ="Government: has issued a 'Shoot-on-sight' law for those willingly spreading disease by coming to work or going outside..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government >= 3 && govtolerance <= 40){
+        governmentType ="Government: is activly searching out infected people and bringing them to camps and burning them..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    } else if (govtolerance < -30){
+        governmentType ="Government: Nothing but echoes from the ruins of once was..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+// BAD
+    }else if ($ordersArray[index].government === 2 && govtolerance <= 10){
+        governmentType ="Government: is confused by your decision. They require clearance for all of your medical staff..."
+            $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 2 && govtolerance <= 20){
+        governmentType ="Government: is reacting poorly to your decision. They are starting to question the direction we are going. They will discuss next committee meeting..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 2 && govtolerance <= 30){
+        governmentType ="Government: is overflown with requests and due to your poor structuring. They have armed their guards with assault rifles and limit the ammount of access to your clinics..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 2 && govtolerance <= 40){
+        governmentType ="Government: is in a reactive state...It is reacting to any outside incompliance with hostility... This will lead to a desintegrtation of public trust and structure... Immediate repair is required..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+// NEITHER BAD
+    }else if ($ordersArray[index].government === 1 && govtolerance <= 10){
+        governmentType ="Government: is tense..."
+            $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 1 && govtolerance <= 20){
+        governmentType ="Government: is dissapointed in your decision..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 1 && govtolerance <= 30){
+        governmentType ="Government: is destressed at your continuous ignorance..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 1 && govtolerance <= 40){
+        governmentType ="Government: has cut off communication channels..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+// NEUTRAL
+    }else if ($ordersArray[index].government === 0 && govtolerance <= 10){
+        governmentType ="Government: carries on..."
+            $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 0 && govtolerance <= 20){
+        governmentType ="Government: works diligently to solve the problem..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 0 && govtolerance <= 30){
+        governmentType ="Government: is making preparations..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === 0 && govtolerance <= 40){
+        governmentType ="Government: is continues to commit atrocities..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+// NEITHER GOOD
+    }else if ($ordersArray[index].government === -1 && govtolerance <= 10){
+        governmentType ="Government: is happy with your decision..."
+            $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === -1 && govtolerance <= 20){
+        governmentType ="Government: is good to see your ethical direction change... "
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === -1 && govtolerance <= 30){
+        governmentType ="Government: takes note of this, but are still very tense..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === -1 && govtolerance <= 40){
+        governmentType ="Government: does not care, but this decision does help them..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+// GOOD 
+    }else if ($ordersArray[index].government === -2 && govtolerance <= 10){
+        governmentType ="Government: is grateful to you and the NBACC for helping so much..."
+            $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === -2 && govtolerance <= 20){
+        governmentType ="Government: is glad to see a positive change in direction..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === -2 && govtolerance <= 30){
+        governmentType ="Government: is skeptical about the future of this decision, but is glad to see that it is changing...They open up access to clinics..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government === -2 && govtolerance <= 40){
+        governmentType ="Government: is glad to see that you have some remnants of a brain in your head..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+// GREAT 
+    }else if ($ordersArray[index].government <=-3 && govtolerance <= 10){
+        governmentType ="Government: is extremely happy about your decision...It sends gifts to you and your office"
+            $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government <=-3 && govtolerance <= 20){
+        governmentType ="Government: is happy to see that these types of decisions of such importance are being made..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government <=-3 && govtolerance <= 30){
+        governmentType ="Government: is glad to see a large positive shift to normalicy...Doctors and NBACC technicals are shared..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }else if ($ordersArray[index].government <=-3 && govtolerance <= 40){
+        governmentType ="Government: reinstates communication with us..."
+        $('#console').prepend(`<p>${governmentType}</p>`)
+    }
+
+var pubtype="";
+//40
+// HORRIBLE
+if($ordersArray[index].public >= 3 && publicUnrest <= 10){
+    pubtype ="Public: is frightened by your actions... Your reputation and history is drug through the mud on live Television..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public >= 3 && publicUnrest <= 20){
+        pubtype ="Public:  is horrified by your abilities as a decision maker...A rumor starts to float around that you actually want the disease to spread... "
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public >= 3 && publicUnrest <= 30){
+        pubtype ="Public:  is hostile towards Doctors and accuses you for spreading the disease..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public >= 3 && publicUnrest <= 40){
+        pubtype ="Public: it is chaos in the streets... Shootings and looting is commonplace... No one cares about the disease anymore..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if (publicUnrest < -30){
+        pubtype ="Public: Cries of the dead haunt your living nightmare..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+// BAD
+    }else if ($ordersArray[index].public === 2 && publicUnrest <= 10){
+        pubtype ="Public: they are disturbed by your lack of care for them...but they want to be sure that this new disease is taken care of quickly... They comply..."
+            $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== 2 && publicUnrest <= 20){
+        pubtype ="Public:  They resist their Government more, because they have lost faith in you as a leader..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== 2 && publicUnrest <= 30){
+        pubtype ="Public: They are disgusted by the way you have decided to handle things...Your teams are assaulted on the streets..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== 2 && publicUnrest <= 40){
+        pubtype ="Public: They are continuously rioting against the Government Control Force..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+// NEITHER BAD
+    }else if ($ordersArray[index].public === 1 && publicUnrest <= 10){
+        pubtype ="Public: They are dissapointed with your choice"
+            $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== 1 && publicUnrest <= 20){
+        pubtype ="Public:  They put up posters with your face and urinate on them..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== 1 && publicUnrest <= 30){
+        pubtype ="Public: They drag a paper-mache doll of you through the streets... The Government disperses them with rubber bullets and gas..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== 1 && publicUnrest <= 40){
+        pubtype ="Public: They vandalize all the clinics and harrass Medical Staff..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }
+//NEUTRAL
+    else if ($ordersArray[index].public === 0 && publicUnrest <= 10){
+        pubtype ="Public: carries on..."
+            $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public === 0 && publicUnrest <= 20){
+        pubtype ="Public:  trying to do the best they can to make it through what ever this is..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public === 0 && publicUnrest <= 30){
+        pubtype ="Public: Will not respond to repeated attepmts at medical treatment..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public === 0 && publicUnrest <= 40){
+        pubtype ="Public: Unable to contact due to high risk to your medical staff's lives..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+//NEITHER GOOD
+    }else if ($ordersArray[index].public === -1  && publicUnrest <= 10){
+        pubtype ="Public: They are happy to see any change for the better. Children give lolypops to the medical teams as they pass by..."
+            $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== -1 && publicUnrest <= 20){
+        pubtype ="Public:  They know you can make the right decisions...They want you to make more of them..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== -1 && publicUnrest <= 30){
+        pubtype ="Public: They see that progress has been made and lighten up on vandalizing NBACC property..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== -1 && publicUnrest <= 40){
+        pubtype ="Public: They are not paying attention to the small steps you are making towards calming them down..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+// GOOD
+    }else if ($ordersArray[index].public === -2 && publicUnrest <= 10){
+        pubtype ="Public: They are excited that you care so much about them... They comply with the medical teams that you send out..."
+            $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== -2 && publicUnrest <= 20){
+        pubtype ="Public:  They know you are doing your best and convince others of your experience and willingness to see this through..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== -2 && publicUnrest <= 30){
+        pubtype ="Public: They see that you have some essence of humanity in you... The medical staff are left alone..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public=== -2 && publicUnrest <= 40){
+        pubtype ="Public: Their riots and violence lessens as more people return to their homes..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+// GREAT
+    }else if ($ordersArray[index].public >= -3 && publicUnrest <= 10){
+        pubtype ="Public: They know that they are in capable hands...They are orderly and polite...Your medical teams sees three times their normal ammount of patients in a day..."
+            $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public>= -3 && publicUnrest <= 20){
+        pubtype ="Public: The clinics are cleaned up by volunteers and your medical staff are bolstered by volunteer doctors from the city..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public>= -3 && publicUnrest <= 30){
+        pubtype ="Public: A counter riot occurs in support of you and your decisions..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }else if ($ordersArray[index].public>= -3 && publicUnrest <= 40){
+        pubtype ="Public: They stop their rioting and let the medical teams pass through without issue..."
+        $('#console').prepend(`<p>${pubtype}</p>`)
+    }
+
+var curetype="";
+//25
+// GREAT
+if($ordersArray[index].cure >= 3 && cureCount <= 5){
+    curetype ="Cure Progress: Amazing! This technique we used on the disease worked! This opens up so many more avenues for exploration!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure >= 3 && cureCount <= 10){
+        curetype ="Cure Progress: Fantastic, another huge step towards developing a cure! "
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure >= 3 && cureCount <= 15){
+        curetype ="Cure Progress: Our lab has been staying up 24/7 and we have made a breakthrough! We might just be there!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure >= 3 && cureCount <= 20){
+        curetype ="Cure Progress: The cure is being synthesized as we speak! Nothing can stop us!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if (cureCount < -20){
+        curetype ="Cure Progress: At what cost? ........"
+        $('#console').prepend(`<p>${curetype}</p>`)
+// GOOD
+    }else if ($ordersArray[index].cure === 2 && cureCount <= 5){
+        curetype ="Cure Progress: What a discovery!"
+            $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 2 && cureCount <= 10){
+        curetype ="Cure Progress: This changes everything! Wonderful!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 2 && cureCount <= 15){
+        curetype ="Cure Progress: We can do this!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 2 && cureCount <= 20){
+        curetype ="Cure Progress: We are so close!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+// OK
+    }else if ($ordersArray[index].cure === 1 && cureCount <= 5){
+        curetype ="Cure Progress: Not something we didn't know, but anything helps!"
+            $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 1 && cureCount <= 10){
+        curetype ="Cure Progress: Great small find today!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 1 && cureCount <= 15){
+        curetype ="Cure Progress: Lab tech noted a peculiar event...Progress is progress!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 1 && cureCount <= 20){
+        curetype ="Cure Progress: We are on the cusp of discovery!"
+        $('#console').prepend(`<p>${curetype}</p>`)
+// NEUTRAL
+    }else if ($ordersArray[index].cure === 0 && cureCount <= 5){
+        curetype ="Cure Progress: No progress today, but we will continue searching for answers..."
+            $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 0 && cureCount <= 10){
+        curetype ="Cure Progress: We tried all of our marks today, no progress..."
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 0 && cureCount <= 15){
+        curetype ="Cure Progress: Even with our new information, this disease proves difficult to manage...no progress..."
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }else if ($ordersArray[index].cure=== 0 && cureCount <= 20){
+        curetype ="Cure Progress: An unexpected delay has occured in our process...no progress..."
+        $('#console').prepend(`<p>${curetype}</p>`)
+    }
+
+    var diseasetype="";
+    //40
+// HORRIBLE
+    if($ordersArray[index].disease >= 3 && diseaseCount <= 10){
+        diseasetype ="Disease: This was a terrible decision! This disease shows potential to be something horrible..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].disease >= 3 && diseaseCount <= 20){
+            diseasetype ="Disease: How could you have done this!? This disease is mutating like nothing that we have ever seen before..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].disease >= 3 && diseaseCount <= 30){
+            diseasetype ="Disease: Our lab technitians will not step into the specimen containment partition because of our lack of safety... Our research is grindng to a halt..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].disease >= 3 && diseaseCount <= 40){
+            diseasetype ="Disease: I never thought I would see one, but thanks to you this is a world ending disease... May our legacy be known by those who survive..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if (diseaseCount < -20){
+            diseasetype ="Disease: It is gone...for how long is anyone's guess..."
+            $('#console').prepend(`<p>${curetype}</p>`)
+// BAD
+    }else if ($ordersArray[index].public === 2 && diseaseCount <= 10){
+            diseasetype ="Disease: This was a horrible idea, these people need to know just how dangerous this disease is!"
+                $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 2 && diseaseCount <= 20){
+            diseasetype ="Disease: How could you let this happen? It has spread even more now!"
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 2 && diseaseCount <= 30){
+            diseasetype ="Disease: The disease has killed one of our lab technicians...This is a deadly situation..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 2 && diseaseCount <= 40){
+            diseasetype ="Disease: There may be no containing it now...because of you..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+    // NEITHER BAD
+        }else if ($ordersArray[index].public === 1 && diseaseCount <= 10){
+            diseasetype ="Disease: We could have forseen this. This was preventable..."
+                $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 1 && diseaseCount <= 20){
+            diseasetype ="Disease:  The disease has not responded to any form of our new procedure..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 1 && diseaseCount <= 30){
+            diseasetype ="Disease: The disease has spread and infected more innocent people because of a simple mistake... Your mistake..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 1 && diseaseCount <= 40){
+            diseasetype ="Disease: This is the end...The last nudge into the abyss..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }
+    //NEUTRAL
+        else if ($ordersArray[index].public === 0 && diseaseCount <= 10){
+            diseasetype ="Disease: We have seen no new mutations in the disease..."
+                $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 0 && diseaseCount <= 20){
+            diseasetype ="Disease:  The disease has gone dormant in our samples...I wonder if it is the same with people?"
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 0 && diseaseCount <= 30){
+            diseasetype ="Disease: There are no reports of new cases today...It could just be dormant..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== 0 && diseaseCount <= 40){
+            diseasetype ="Disease: It hasn't mutated yet, but it will..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+    //NEITHER GOOD
+        }else if ($ordersArray[index].public === -1 && diseaseCount <= 10){
+            diseasetype ="Disease: We discovered a simple way of blocking a small part of its dna! This will unlock doors in the future..."
+                $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== -1 && diseaseCount <= 20){
+            diseasetype ="Disease:  This is a good step in the right direction..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== -1 && diseaseCount <= 30){
+            diseasetype ="Disease: This will help, but not as much as is needed..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== -1 && diseaseCount <= 40){
+            diseasetype ="Disease: Too little, too late...."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+    // GOOD
+        }else if ($ordersArray[index].public === -2 && diseaseCount <= 10){
+            diseasetype ="Disease: What a discovery! We need to send this to clinics in the city ASAP!"
+                $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== -2 && diseaseCount <= 20){
+            diseasetype ="Disease:  This is a fantastic step in the right direction! The disease is reacting to it!"
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== -2 && diseaseCount <= 30){
+            diseasetype ="Disease: This is going to help a lot of people... You should be proud..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public=== -2 && diseaseCount <= 40){
+            diseasetype ="Disease: I know things look bad, but if we keep making decisions like this, we might have a chance..."
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+    // GREAT
+        }else if ($ordersArray[index].public >= -3 && diseaseCount <= 10){
+            diseasetype ="Disease: You goddamn beautiful genius! This will stop so many people from getting sick!"
+                $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public>= -3 && diseaseCount <= 20){
+            diseasetype ="Disease:  How did you find this method!? This will stop the infection from spreading incredibly effectively!! "
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public>= -3 && diseaseCount <= 30){
+            diseasetype ="Disease: This is a large step in the right direction! I'm showing reduction in infection sizes on 5 of our samples!"
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }else if ($ordersArray[index].public>= -3 && diseaseCount <= 40){
+            diseasetype ="Disease: This is a miracle! You may have just pulled us away from oblivion!"
+            $('#console').prepend(`<p>${diseasetype}</p>`)
+        }
+
+/////////////  T E R M I N A L   L O G S /////////////  T E R M I N A L   L O G S 
+/////////////  T E R M I N A L   L O G S /////////////  T E R M I N A L   L O G S 
+/////////////  T E R M I N A L   L O G S /////////////  T E R M I N A L   L O G S 
+
+//////////////  D I S E A S E  C O R O L A T I O N  ////////////////////////////
+if($ordersArray[index].kind === randDisease.type){
+    $('#console').prepend(`<p>Research: The disease reacted to our methods!</p>`)
+    // This is where we tell them that their decsion was good and the desease has slowed down!
+}
+else if($ordersArray[index].kind === "good"){
+    $('#console').prepend(`<p>This was a good decision, but may have incurred at others expense...</p>`)
+    // Tell them that their choice has had a relatively good impact on the state of things!
+}else if($ordersArray[index].kind === "bad"){
+    $('#console').prepend(`<p>This was a bad idea, many things may be affected by this...</p>`)
+    // Tell them that their choice was not in the best interest of the health of the public
+}else if($ordersArray[index].kind === "horrible"){
+    $('#console').prepend(`<p>Jesus Christ, why?? Oh god, why?? You may have doomed us...</p>`)
+    // Tell them that they may have doomed the city
+} else if($ordersArray[index].kind === "great"){
+    $('#console').prepend(`<p>This is incredible!! Great job! Fantastic decision!</p>`)
+    // Tell them that they should recieve a commendation for their wonderful efforts!
+}else if($ordersArray[index].kind === "none"){
+    $('#console').prepend(`<p>Idiling by...</p>`)
+    // Tell them that sometimes evils are neccessary.
+}
+    ////////// S T A R T:  Y O U  M O N S T E R ////////////////////////////////////
+    ////////// S T A R T:  Y O U  M O N S T E R ////////////////////////////////////
+    ////////// S T A R T:  Y O U  M O N S T E R ////////////////////////////////////
+else if ($ordersArray[index].kind === "end"){
+
+        
+        $('#youmonster').trigger('click')
+        ////// F A D E   E F F E C T /////////////
+        $("#youmonster").modal({
+            fadeDuration: 1100
+        })
+        $('#g1 p').text($(`li:contains(${$orders})`).children('.horror').text())
+
+    let $el = $('#g1 p'),
+    html = $el.html(),
+    txt = $el.text(),
+    txtLen = txt.length,
+    timeOut,
+    char = 0;
+
+    $el.text('|');
+setTimeout(function(){
+(function typeIt() {
+    let humanize = Math.round(Math.random() * (150-60))+1;
+    timeOut = setTimeout(function () {
+        char++;
+        let type = html.substring(0,char);
+        $el.html(type + '|');
+        typeIt();
+        if (char == txtLen) {
+            $el.html($el.html().slice(0, -1)); // remove the '|'
+            clearTimeout(timeOut);}
+
+    }, humanize);}())
+},2000);
+
+
+
+
+
+
+    setTimeout(function(){
+        $('#saveearthenacted').trigger('click')
+    ////// F A D E   E F F E C T /////////////
+    $("#saveearthEnacted").modal({
+        fadeDuration: 1100
+    })
+    $('#f1 p').text(`
+ALERT: .....INCOMING MESSAGE.......
+READING ENCRYPTED FILES>>>>>>>>>>
+........STARTING TRANSMISSION.......
+....................................
+     _  __ DIRECT __ FROM __ _____
+    / |/ // _ ) / _ | / ___// ___/
+   /    // _  |/ __ |/ /__ / /__  
+  /_/|_//____//_/ |_|\\___/ \\___/
+
+
+    National Biodefense Analysis 
+     and Countermeasures Center:
+ 
+         FORM RESTRUCTURING 
+          ::::##~CATA-ULRE
+         >>>>>>>>>>>>>>>>>>
+        PROTOCOL: "SAVE EARTH"
+            >>>>>>>>>>>>>
+              ENACTED
+.....................................
+              MESSAGE:
+  CIVILIAN COMMUNICATIONS LOST>>>>>
+  ALL DARK ON VSO SPECTRUM>>>>>>>
+  <<<<<<TOTAL LOSS OF LIFE>>>>>>>
+  FAILURE AT THE MOST BASIC LEVELS
+              >>>>>>>
+   COMPILING DATA AND PREPARING TO 
+   FURTHER SANITIZE CITY...
+
+     PREP FOR HEARING WITH NBACC
+     COMPETENCE PANEL AT 08:00 
+          <<<<<<<<>>>>>>>
+     YOU HAVE A LOT TO EXPLAIN
+             >>>>>>>>>
+ CONNECTION LOST`).css('white-space','pre')
+
+let $el = $('#f1 p'),
+    html = $el.html(),
+    txt = $el.text(),
+    txtLen = txt.length,
+    timeOut,
+    char = 0;
+
+    $el.text('|');
+setTimeout(function(){
+(function typeIt() {
+    let humanize = Math.round(Math.random() * (60))+1;
+    timeOut = setTimeout(function () {
+        char++;
+        let type = html.substring(0,char);
+        $el.html(type + '|');
+        typeIt();
+        if (char == txtLen +300) {
+            $el.html($el.html().slice(0, -1)); // remove the '|'
+            clearTimeout(timeOut);}
+
+    }, humanize);}())
+},800);
+},18000)
+}else if ($ordersArray[index].kind != randDisease.type){
+    $ordersArray[index].cure = 0;
+    $('#console').prepend(`<p>Research: This method has had no effect on the disease!</p>`)
+}
+////////// E N D:  Y O U  M O N S T E R ////////////////////////////////////
+////////// E N D:  Y O U  M O N S T E R ////////////////////////////////////
+////////// E N D:  Y O U  M O N S T E R ////////////////////////////////////
+
+
+////////// S H O W  S Y M P T O M S ////////////////////////////////////////
+////////// S H O W  S Y M P T O M S ////////////////////////////////////////
+////////// S H O W  S Y M P T O M S ////////////////////////////////////////
+////////// S H O W  S Y M P T O M S ////////////////////////////////////////
+if(symptoms.length === turnArray.length){
+    if(govtolerance < -30){
+        $('#console').prepend(`<p>Nothing But Wasteland</p<`)
+    }else {
+    $('#console').prepend(`<p>NEW LIST OF SYMPTOMS:</p><p>${symptoms}</p>`)
+}}
 
 
 // TO DO:
@@ -414,6 +934,7 @@ $('#gov').val("");
 // C O M P L E T E 
 
 // create the diologue box in which we can see the events happening
+// C O M P L E T E 
 
 //connect the progress bars 
 // C O M P L E T E 
@@ -613,8 +1134,9 @@ READING ENCRYPTED FILES>>>>>>>>>>
 //////////////  S A V E   E A R T H  P R O T O C O L ///////////////
 
 var saveearth = function (){
-    if(diseaseCount > 35){
+    if(diseaseCount > 35 && saveEarth === false){
         solutionsEnabled = true
+        saveEarth = true
         $('#endtext').trigger('click')
         ////// F A D E   E F F E C T /////////////
         $("#endtext").modal({
