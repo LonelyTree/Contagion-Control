@@ -13,7 +13,17 @@
 #modl {
     display:none;
 }
-    
+#c1 {
+    background: #27d3ff45
+}
+#c1 p {
+    background: #1384b2ba;
+    color: #39e500;
+}
+#d1 p {
+    background: #ff00009c;
+    color: black;
+}
 
 .blocker{
     position: fixed;

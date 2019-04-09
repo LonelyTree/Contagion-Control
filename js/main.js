@@ -337,8 +337,8 @@ $('#govsub').click(()=>{
 turnCount++
 turnArray.push(randDisease.symptoms[(turnCount-1)])//pushes right symptom per turn to array
 infectPopulation() 
-fateOfCity() 
-saveearth() 
+fateOfCity()
+
 
 ////////////// P O P O U L A T I O N //////////////////
 $('#hpop').text(cityPopulation)
@@ -351,6 +351,12 @@ govtolerance += $ordersArray[index].government
 cureCount += $ordersArray[index].cure
 ///////////// A P P E A R A N C E  O F  S Y M P T O M S //////////////
 showsympt()
+/////////////  D I S T R O   C U R E
+distroCure()
+/////////////  E M N B A C C  P R O T O C O L
+// saveearth() 
+
+fullPopulationDeath()
 
 //////////////  D I S E A S E  C O R O L A T I O N  ////////////////////////////
 if($ordersArray[index].kind === randDisease.type){
@@ -419,21 +425,24 @@ $('#gov').val("");
 // C O M P L E T E 
 
 // Make modal for winning with cure reaching 100%
+// C O M P L E T E 
 
 // Make modal for failure with population reaching 0.
+//  C O M P L E T E 
 
 // Make reactionary events for government (5)  population (5) and science (3)
-
+// N O T   A T T A I N A B L E  W/  T I M E F R A M E
 // show symptoms as they appear
 // C O M P L E T E
 
 // show symptoms on window as they appear
+// A T T E M P T I N G   4 - 8 - 1 9
 
 // corrolate decisions based on disease type 
 // C O M P L E T E 
 
 // give ability to diagnose and start on cure
-
+// A T T E M P T I N G   4 - 8 - 1 9
 
 
 // 
@@ -441,21 +450,158 @@ $('#gov').val("");
 //////////////  E N D   R E F   C O D E   S U B M I T   ////////////////////////////
 //////////////  E N D   R E F   C O D E   S U B M I T   /////////////////////////////////////////////  E N D   R E F   C O D E   S U B M I T   ////////////////////////////
 
+
+////////////// C U R E  D I S T R I B U T E D /////////////////////
+////////////// C U R E  D I S T R I B U T E D /////////////////////
+////////////// C U R E  D I S T R I B U T E D /////////////////////
+var fullPopulationDeath = function (){
+    if(cityPopulation <= 0){
+        $('#fulldeath').trigger('click')
+        ////// F A D E   E F F E C T /////////////
+        $("#fulldeath").modal({
+            fadeDuration: 1100
+        })
+        $('#d1 p').text(`
+ALERT: .....INCOMING MESSAGE.......
+READING ENCRYPTED FILES>>>>>>>>>>
+........STARTING TRANSMISSION.......
+....................................
+     _  __ DIRECT __ FROM __ _____
+    / |/ // _ ) / _ | / ___// ___/
+   /    // _  |/ __ |/ /__ / /__  
+  /_/|_//____//_/ |_|\\___/ \\___/
+
+
+    National Biodefense Analysis 
+    and Countermeasures Center:
+
+        FORM RESTRUCTURING 
+        ::::##~CATA-ULRE
+        >>>>>>>>>>>>>>>>>>
+           "FULL DEATH"
+          >>>>>>>>>>>>>
+.....................................
+             MESSAGE:
+  CDCEM COMMUNICATIONS LOST>>>>>
+  ALL DARK ON VSO SPECTRUM>>>>>>>
+  <<<<<<TOTAL LOSS OF LIFE>>>>>>>
+ FAILURE AT THE MOST BASIC LEVELS...
+ 
+ COMPILING DATA AND PREPARING TO 
+ SANITIZE CITY...
+ 
+ SEVERAL SYMPTOMS SIMILAR TO OURS
+ SEEN OUTSIDE OF CONTAINMENT....
+ PREP FOR EMERGENCY LANDING>>>>>>>>> 
+ <<<<YOU ARE HEADED IN FIRST>>>>>>>>`).css('white-space','pre')
+
+
+let $el = $('#d1 p'),
+    html = $el.html(),
+    txt = $el.text(),
+    txtLen = txt.length,
+    timeOut,
+    char = 0;
+
+    $el.text('|');
+setTimeout(function(){
+(function typeIt() {
+    let humanize = Math.round(Math.random() * (60))+1;
+    timeOut = setTimeout(function () {
+        char++;
+        let type = html.substring(0,char);
+        $el.html(type + '|');
+        typeIt();
+        if (char == txtLen +300) {
+            $el.html($el.html().slice(0, -1)); // remove the '|'
+            clearTimeout(timeOut);}
+
+    }, humanize);}())
+},2000);
+    
+}
+}
+
+
+
+
+//////////////  E N D  C U R E  D I S T R I B U T E D /////////////
+//////////////  E N D  C U R E  D I S T R I B U T E D /////////////
+//////////////  E N D  C U R E  D I S T R I B U T E D /////////////
+
 ////////////// C U R E  D I S T R I B U T E D /////////////////////
 ////////////// C U R E  D I S T R I B U T E D /////////////////////
 ////////////// C U R E  D I S T R I B U T E D /////////////////////
 
 var distroCure = function (){
     if(cureCount >= 25){
-        $('#endtext').trigger('click')
+        $('#curedistro').trigger('click')
         ////// F A D E   E F F E C T /////////////
-        $("#endtext").modal({
+        $("#curedistro").modal({
             fadeDuration: 1100
         })
         ////// T Y P I N G   E F F E C T //////////
-        $('#b1 p').text()
+        $('#c1 p').text(`
+ALERT: .....INCOMING MESSAGE.......
+READING ENCRYPTED FILES>>>>>>>>>>
+........STARTING TRANSMISSION.......
+....................................
+     _  __ DIRECT __ FROM __ _____
+    / |/ // _ ) / _ | / ___// ___/
+   /    // _  |/ __ |/ /__ / /__  
+  /_/|_//____//_/ |_|\\___/ \\___/
+  
+  
+    National Biodefense Analysis 
+    and Countermeasures Center:
+.....................................
+              MESSAGE:
+          CONGRATULATIONS!!
+ BECAUSE OF YOUR DILIGENCE AND HARD 
+ WORK THE DISEASE HAS BEEN 
+ IDENTIFIED AND WE ARE NOW IN THE 
+ PROCESS OF MANUFACTURING A CURE ON
+ A LARGE SCALE... 
 
+ WORKING PROTOTYPES ARE SHOWING 100% 
+ RECOVERY IN EVEN THE MOST ADVANCED 
+ CASES IN THE ZONE. YOU SHOULD BE 
+ PROUD OF YOURSELF... YOU HAVE SAVED 
+ HE LIVES OF THE PEOPLE IN THIS CITY 
+ AND COUNTLESS MORE IN THE WORLD...
+ THE PRESIDENT OF THE U.N. WISHES 
+ TO SPEAK WITH YOU... THERE IS A 
+ NEW RUMOR....
+ .........YOUR SERVICES ARE 
+ REQUESTED...
 
+  <<<<<<<ENDING TRANSMISSION>>>>>>>`).css('white-space','pre')
+
+        let $el = $('#c1 p'),
+        html = $el.html(),
+        txt = $el.text(),
+        txtLen = txt.length,
+        timeOut,
+        char = 0;
+    
+        $el.text('|');
+    setTimeout(function(){
+    (function typeIt() {
+        let humanize = Math.round(Math.random() * (60))+1;
+        timeOut = setTimeout(function () {
+            char++;
+            let type = html.substring(0,char);
+            $el.html(type + '|');
+            typeIt();
+            if (char == txtLen +300) {
+                $el.html($el.html().slice(0, -1)); // remove the '|'
+                clearTimeout(timeOut);}
+    
+        }, humanize);}())
+    },2000);
+        
+    }
+    }
 
 
 ////////////// E N D  C U R E  D I S T R I B U T E D /////////////////////
@@ -506,7 +652,7 @@ ALERT: .....INCOMING MESSAGE.......
      >>CONNECTION LOST`).css('white-space','pre')
 
 
-var $el = $('#b1 p'),
+let $el = $('#b1 p'),
     html = $el.html(),
     txt = $el.text(),
     txtLen = txt.length,
@@ -516,10 +662,10 @@ var $el = $('#b1 p'),
     $el.text('|');
 setTimeout(function(){
 (function typeIt() {
-    var humanize = Math.round(Math.random() * (60))+1;
+    let humanize = Math.round(Math.random() * (60))+1;
     timeOut = setTimeout(function () {
         char++;
-        var type = html.substring(0,char);
+        let type = html.substring(0,char);
         $el.html(type + '|');
         typeIt();
         if (char == txtLen +300) {
@@ -650,7 +796,7 @@ var dead = 0;
 var selectedCity = citymap[Math.floor(Math.random() * citymap.length)]
 
 //////////// C I T Y  P O P U L A T I O N  C O U N T //////////////////////////////////
-var cityPopulation = (selectedCity.area + 2600) ** 2
+var cityPopulation = (selectedCity.area) ** 2
 
 
 ///////////////  E N D  C O U N T S ///////////////   E N D  C O U N T S  /////////////
@@ -685,7 +831,7 @@ var infectPopulation = function(){
                 infected++
             }
         }
-        else if((Math.floor(Math.random()*70)+1) <=10){
+        else if((Math.floor(Math.random()*30)+1) <=10){
             infected++
         }else{continue;}   
     }
