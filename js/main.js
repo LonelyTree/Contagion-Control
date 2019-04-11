@@ -1,41 +1,41 @@
 
-    // submit button 319
+    
+var toggle = true;
+var martial = true;
+var peop = true;
+var sci = true;
+var diagnose = true;
+var action = true;
+var guide = true;
+var refguide = true; 
+var d1 = true;
+var solutions = true;
+var solutionsEnabled = false;
+var saveEarth = false;
+var theDisease = false;
+var day = 0;
+$('#backpagewrapper').hide()
+$('#map').hide()
+$('#windowanchor').hide()
+$('#wrapper').hide()
+$('#start').hide()
+$('#diagwrapper').hide()
+$('#governmentwrap').hide()
+$('#populationwrap').hide()
+$('#scientistwrap').hide()
 
-    // I N F O   T A B ////////////////////////////////////////////////
-    var toggle = true;
-    var martial = true;
-    var peop = true;
-    var sci = true;
-    var diagnose = true;
-    var action = true;
-    var guide = true;
-    var refguide = true;
-    var d1 = true;
-    var solutions = true;
-    var solutionsEnabled = false;
-    var saveEarth = false;
-    var theDisease = false;
-    var day = 0;
-    $('#backpagewrapper').hide()
-    $('#map').hide()
-    $('#windowanchor').hide()
-    $('#wrapper').hide()
-    $('#start').hide()
-    $('#diagwrapper').hide()
-    $('#governmentwrap').hide()
-    $('#populationwrap').hide()
-    $('#scientistwrap').hide()
+// R E F   C O D E S ////////////////////////////////////////////////
+$('#refcodes').hide()
 
-    // R E F   C O D E S ////////////////////////////////////////////////
-    $('#refcodes').hide()
-    // R E F   G U I D E ////////////////////////////////////////////////
-    $('#refguide').hide()
-    $('#smallpox').hide()
-    // E M E R G E N C Y   S O L U T I O N S ////////////////////////////
-    $('#solutions');
-    $('#emgsolutions').hide()
+// R E F   G U I D E ////////////////////////////////////////////////
+$('#refguide').hide()
+$('#smallpox').hide()
 
-    ///////////////////// I N I T I A T E   E N D  S C R E E N ////////////////////
+// E M E R G E N C Y   S O L U T I O N S ////////////////////////////
+$('#solutions');
+$('#emgsolutions').hide()
+
+ ///////////////////// I N I T I A T E   E N D  S C R E E N ////////////////////
 var endScreen = function(){
     setTimeout(()=>{
     $('#backpagewrapper').fadeIn(4000)},40000)
@@ -43,7 +43,7 @@ var endScreen = function(){
 $('#endbutton').click(function(){
     document.location.reload();
 });
-    // T I T L E  P A G E ////////// S T A R T /////////////////////////////////////
+//////////////////// T I T L E  P A G E ////////// S T A R T ////////////////
     
 let $el = $('#infotyped p'),
 html = $el.html(),
@@ -68,154 +68,159 @@ timeOut = setTimeout(function () {
 }, humanize);}())
 },800);
 
-    // T I T L E  P A G E ////////// S T A R T /////////////////////////////////////
+// T I T L E  P A G E ////////// S T A R T /////////////////////////////////////
 
-    // T I T L E  P A G E ////////// C L I C K E D/////////////////////////////////////
+// T I T L E  P A G E ////////// C L I C K E D/////////////////////////////////////
 
-    $('#button').click(()=>{
-        $('#frontpagewrapper').fadeOut(1000)
-        setTimeout(()=>{
-            $('#map').fadeIn(1000)
-        },1000)
-        setTimeout(()=>{
-            $('#windowanchor').fadeIn(1000)
-        },3000)
-        setTimeout(()=>{
-            $('#wrapper').fadeIn(1000)
-        },5000)
-        setTimeout(()=>{
-            $('#start').fadeIn(1000)
-        },6000)
-    })
-    
-    // // S T A R T   L E A V E //
-    $('#start').click(()=>{
-            $('#start').fadeOut(400)
-    })
-    // M A I N   T A B S /////////// C L I C K E D/////////////////////////////////////
-    $('#martial').on('click', ()=>{
-        if(martial === true){
-        $('#martial').css('background',"black")
-            martial=false
-            $('#governmentwrap').toggle("slow")
+$('#button').click(()=>{
+    $('#frontpagewrapper').fadeOut(1000)
+    setTimeout(()=>{
+        $('#map').fadeIn(1000)
+    },1000)
+    setTimeout(()=>{
+        $('#windowanchor').fadeIn(1000)
+    },3000)
+    setTimeout(()=>{
+        $('#wrapper').fadeIn(1000)
+    },5000)
+    setTimeout(()=>{
+        $('#start').fadeIn(1000)
+    },6000)
+})
+
+// // S T A R T   L E A V E //
+$('#start').click(()=>{
+        $('#start').fadeOut(400)
+})
+
+// M A I N   T A B S /////////// C L I C K E D/////////////////////////////////////
+$('#martial').on('click', ()=>{
+    if(martial === true){
+    $('#martial').css('background',"black")
+        martial=false
+        $('#governmentwrap').toggle("slow")
+    }
+    else if(martial === false){
+        $('#martial').css('background',"#992900")
+        martial=true
+        $('#governmentwrap').toggle("slow")
+    }
+})
+$('#peop').on('click', ()=>{
+    if(peop === true){
+        $('#peop').css('background',"black")
+            peop=false}
+        else if(peop === false){
+            $('#peop').css('background',"#992900")
+            peop=true
         }
-        else if(martial === false){
-            $('#martial').css('background',"#992900")
-            martial=true
-            $('#governmentwrap').toggle("slow")
-        }
-    })
-    $('#peop').on('click', ()=>{
-        if(peop === true){
-            $('#peop').css('background',"black")
-                peop=false}
-            else if(peop === false){
-                $('#peop').css('background',"#992900")
-                peop=true
-            }
-        $('#populationwrap').toggle("slow")
-    })
-    $('#sci').on('click', ()=>{
-        if(sci === true){
-            $('#sci').css('background',"black")
+    $('#populationwrap').toggle("slow")
+})
+$('#sci').on('click', ()=>{
+    if(sci === true){
+        $('#sci').css('background',"black")
+        $('#scientistwrap').toggle("slow")
+            sci=false}
+        else if(sci === false){
+            $('#sci').css('background',"#992900")
             $('#scientistwrap').toggle("slow")
-                sci=false}
-            else if(sci === false){
-                $('#sci').css('background',"#992900")
-                $('#scientistwrap').toggle("slow")
-                sci=true}
-        
-    })
+            sci=true}
+    
+})
+
+
+
+
 ///////////////   C D C   C O N T R O L  B T N S   ///////////////
 
 
 ////////////////////////  R E F   C O D E S  /////////////////////////
-    $('#action').on('click',()=>{
-        if(action === true){
-            $('#action').css('background',"black")
-                action=false}
-            else if(action === false){
-                $('#action').css('background',"#992900")
-                action=true
-            }
-        $('#refcodes').toggle("slow")
-    })
+$('#action').on('click',()=>{
+    if(action === true){
+        $('#action').css('background',"black")
+            action=false}
+        else if(action === false){
+            $('#action').css('background',"#992900")
+            action=true
+        }
+    $('#refcodes').toggle("slow")
+})
 ///////////////  R E F E R E N C E   G U I D E  /////////////
-    $('#guide').on('click', ()=>{
-        if(guide === true){
-            $('#guide').css('background',"black")
-                guide=false}
-            else if(guide === false){
-                $('#guide').css('background',"#992900")
-                guide=true
-            }
-        $('#refguide').toggle("slow")
-    })
+$('#guide').on('click', ()=>{
+if(guide === true){
+    $('#guide').css('background',"black")
+        guide=false}
+    else if(guide === false){
+        $('#guide').css('background',"#992900")
+        guide=true
+    }
+$('#refguide').toggle("slow")
+})
 ///////////////  R E F E R E N C E   G U I D E  S U B  B U T N S /////////////
-    $('#D1').on('click', ()=>{
-        if(d1 === true){
-            $('#D1').css('background',"black")
-                d1=false}
-            else if(d1 === false){
-                $('#D1').css('background',"#992900")
-                d1=true
-            }
-        $('#smallpox').toggle()
-    })
+$('#D1').on('click', ()=>{
+if(d1 === true){
+    $('#D1').css('background',"black")
+        d1=false}
+    else if(d1 === false){
+        $('#D1').css('background',"#992900")
+        d1=true
+    }
+$('#smallpox').toggle()
+})
 ////////////////  E M E R G E N C Y   S O L U T I O N S ///////////////////////
     if(solutionsEnabled === false){
         $('#solutions').css('background','grey')
-    }
-    $('#solutions').on('click', ()=>{
-/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
-/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
-/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
+}
 
-        if(solutionsEnabled === false){
-            $('#end').trigger('click')
-        ////// F A D E   E F F E C T /////////////
-        $("#end").modal({
-            fadeDuration: 1100
-        })
-        ////// T Y P I N G   E F F E C T //////////
-        $('#a1 p').text("NBACC//##~ UNAUTHORIZED ACCESS//##~ TERMINATING LINK")
-        
-            var $el = $('#a1 p'),
-                html = $el.html(),
-                txt = $el.text(),
-                txtLen = txt.length,
-                timeOut,
-                char = 0;
-        
-            $el.text('|');
-        setTimeout(function(){
-        (function typeIt() {
-            var humanize = Math.round(Math.random() * (150 - 80)) + 30;
-            timeOut = setTimeout(function () {
-                char++;
-                var type = html.substring(0, char);
-                $el.html(type + '|');
-                typeIt();
-                if (char == txtLen) {
-                    $el.html($el.html().slice(0, -1)); // remove the '|'
-                    clearTimeout(timeOut);}
-        
+
+/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
+/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
+/////////////  E N A B L E   S O U L T O N S   M O D A L ///////////// 
+$('#solutions').on('click', ()=>{
+    if(solutionsEnabled === false){
+        $('#end').trigger('click')
+////// F A D E   E F F E C T /////////////
+$("#end").modal({
+    fadeDuration: 1100
+})
+////// T Y P I N G   E F F E C T //////////
+$('#a1 p').text("NBACC//##~ UNAUTHORIZED ACCESS//##~ TERMINATING LINK")
+
+var $el = $('#a1 p'),
+    html = $el.html(),
+    txt = $el.text(),
+    txtLen = txt.length,
+    timeOut,
+    char = 0;
+
+$el.text('|');
+setTimeout(function(){
+    (function typeIt() {
+    var humanize = Math.round(Math.random() * (150 - 80)) + 30;
+    timeOut = setTimeout(function () {
+        char++;
+        var type = html.substring(0, char);
+        $el.html(type + '|');
+        typeIt();
+        if (char == txtLen) {
+            $el.html($el.html().slice(0, -1)); // remove the '|'
+            clearTimeout(timeOut);}
             }, humanize);}())
-        },2000);
+            } ,2000);
 ///////////// E N D  M O D A L ///////////// E N D  M O D A L
 ///////////// E N D  M O D A L ///////////// E N D  M O D A L
 ///////////// E N D  M O D A L ///////////// E N D  M O D A L
-        };
-            if(solutions === true && solutionsEnabled === true){
-                $('#solutions').css('background',"#000000").css("color","red")
-                    solutions=false
-                    $('#emgsolutions').toggle("slow")}
-                else if(solutions === false && solutionsEnabled === true){
-                    $('#solutions').css('background',"red").css('color',"black")
-                    solutions=true
-                    $('#emgsolutions').toggle("slow")}
-        
-    })
+};
+if(solutions === true && solutionsEnabled === true){
+    $('#solutions').css('background',"#000000").css("color","red")
+    solutions=false
+    $('#emgsolutions').toggle("slow")}
+else if(solutions === false && solutionsEnabled === true){
+    $('#solutions').css('background',"red").css('color',"black")
+    solutions=true
+    $('#emgsolutions').toggle("slow")}
+
+})
 
 /////////// M O D A L   E M N B A C C  P R O T O C O L ////////////////////////////////
 /////////// M O D A L   E M N B A C C  P R O T O C O L ////////////////////////////////
@@ -261,16 +266,18 @@ setTimeout(function(){
 /////////// M A I N  C H O I C E  M O D A L S /////////////////////////////////////////
 /////////// M A I N  C H O I C E  M O D A L S /////////////////////////////////////////
 /////////// M A I N  C H O I C E  M O D A L S /////////////////////////////////////////
-
 $('.codesdiv ul li').click((e) => {
     var $sentence = " "
     var $target = $(e.target);
     $sentence = $target.children('.hide').text()
 $('#open').trigger('click')
+
+
 ////// F A D E   E F F E C T /////////////
 $("#open").modal({
     fadeDuration: 500
 })
+
 ////// T Y P I N G   E F F E C T //////////
 $('#e1 p').text($sentence)
 
@@ -868,7 +875,7 @@ else if ($ordersArray[index].kind === "end"){
 
         
         $('#youmonster').trigger('click')
-        ////// F A D E   E F F E C T /////////////
+////// F A D E   E F F E C T /////////////
         $("#youmonster").modal({
             fadeDuration: 1100
         })
@@ -904,7 +911,7 @@ setTimeout(function(){
 
     setTimeout(()=>{
         $('#saveearthenacted').trigger('click')
-    ////// F A D E   E F F E C T /////////////
+////// F A D E   E F F E C T /////////////
     $("#saveearthEnacted").modal({
         fadeDuration: 1100
     })
@@ -962,7 +969,7 @@ setTimeout(function(){
      $el.html(type + '|');
      typeIt();
      if (char == txtLen +300) {
-         $el.html($el.html().slice(0, -1)); // remove the '|'
+         $el.html($el.html().slice(0, -1));
          clearTimeout(timeOut);}
 
  }, humanize);}())
@@ -990,8 +997,8 @@ if(symptoms.length === turnArray.length){
         $('#console').prepend(`<p>Nothing But Wasteland</p<`)
     }else {
     $('#console').prepend(`<p style=" background: #6ec503;">NEW LIST OF SYMPTOMS:</p><p style=" background: #6ec503;">${symptoms}</p>`)
-}}
-
+    }}
+})
 
 // TO DO:
 
@@ -1037,14 +1044,12 @@ if(symptoms.length === turnArray.length){
 // C O M P L E T E 
 
 // give ability to diagnose and start on cure
-// A T T E M P T I N G   4 - 10 - 1 9
+// C O M P L E T E
 
 // create end page and restart button
-// A T T E M P T I N G   4 - 10 - 19
+// C O M P L E T E
 
 
-// 
-})
 
 
 //////////////  E N D   R E F   C O D E   S U B M I T   ////////////////////////////
@@ -1057,7 +1062,7 @@ if(symptoms.length === turnArray.length){
 var fullPopulationDeath = function (){
     if(cityPopulation <= 0){
         $('#fulldeath').trigger('click')
-        ////// F A D E   E F F E C T /////////////
+////// F A D E   E F F E C T /////////////
         $("#fulldeath").modal({
             fadeDuration: 1100
         })
@@ -1113,7 +1118,7 @@ setTimeout(function(){
         $el.html(type + '|');
         typeIt();
         if (char == txtLen +300) {
-            $el.html($el.html().slice(0, -1)); // remove the '|'
+            $el.html($el.html().slice(0, -1));
             clearTimeout(timeOut);}
 
     }, humanize);}())
@@ -1136,11 +1141,11 @@ setTimeout(function(){
 var distroCure = function (){
     if(cureCount >= 25){
         $('#curedistro').trigger('click')
-        ////// F A D E   E F F E C T /////////////
+////// F A D E   E F F E C T /////////////
         $("#curedistro").modal({
             fadeDuration: 1100
         })
-        ////// T Y P I N G   E F F E C T //////////
+////// T Y P I N G   E F F E C T //////////
         $('#c1 p').text(`
 ALERT: .....INCOMING MESSAGE.......
 READING ENCRYPTED FILES>>>>>>>>>>
@@ -1194,7 +1199,7 @@ READING ENCRYPTED FILES>>>>>>>>>>
             $el.html(type + '|');
             typeIt();
             if (char == txtLen +300) {
-                $el.html($el.html().slice(0, -1)); // remove the '|'
+                $el.html($el.html().slice(0, -1)); 
                 clearTimeout(timeOut);}
     
         }, humanize);}())
@@ -1217,11 +1222,11 @@ var saveearth = function (){
         solutionsEnabled = true
         saveEarth = true
         $('#endtext').trigger('click')
-        ////// F A D E   E F F E C T /////////////
+////// F A D E   E F F E C T /////////////
         $("#endtext").modal({
             fadeDuration: 1100
         })
-        ////// T Y P I N G   E F F E C T //////////
+////// T Y P I N G   E F F E C T //////////
         $('#b1 p').text(`
 ALERT: .....INCOMING MESSAGE.......
   READING ENCRYPTED FILES>>>>>>>>>>
@@ -1270,7 +1275,7 @@ setTimeout(function(){
         $el.html(type + '|');
         typeIt();
         if (char == txtLen +300) {
-            $el.html($el.html().slice(0, -1)); // remove the '|'
+            $el.html($el.html().slice(0, -1)); 
             clearTimeout(timeOut);}
 
     }, humanize);}())
@@ -1422,7 +1427,7 @@ $('#diagsub').click(()=>{
         $('#console').prepend(`<p style="background: white; color: black">"You were right! I can't believe it! Our treatment of the infected and research of cure will increase exponentially!"</p>`)
         theDisease = true
     }else {$('#console').prepend(`<p style="background: white; color: black">"You were wrong! Your hubris has sent our research in the wrong direction... You may have killed half of our citizens..."</p>`)
-diseaseCount = diseaseCount + 10;}
+        diseaseCount = diseaseCount + 10;}
 })
 
 
@@ -1473,67 +1478,25 @@ $('#ipop').text(infected)
 
 //////////// D I S E A S E   S Y M P T O M   B I N ////////////////////////////////////
 var symptoms = [];
-// var showsympt = function(){
-// if(diseaseCount < 4){
-//     holder.push(randDisease.symptoms[0])
-// }
-// else if(diseaseCount %4 ===0){
-//         for(let i=0; i < (diseaseCount/4); i++){
-//             if(holder[i] !== randDisease.symptoms[i])
-//         holder.push(randDisease.symptoms[i]);
-//             //push the symptom to the array on the turn that they missed.
-//             // This is where we let the person know if a new symptom has appeared.
-//             // This is where we let the person know if a new symptom has appeared.
-//             // This is where we let the person know if a new symptom has appeared.
-//             // This is where we let the person know if a new symptom has appeared.
-//             // This is where we let the person know if a new symptom has appeared.
-//         }for(let e=0; e <turnCount; e++){
-//             if(turnCount < (diseaseCount/4)){
-//                 holder.push(randDisease.symptoms[e])
-//             }
-//         }for(let j = 0; j < symptoms.length; j++){
-//             if(holder[j] != symptoms[j]){
-//                 symptoms.push(holder)
-//             }
-//         }
-//     }
-// }
 
-// var showsympt = function(){
-//     if(diseaseCount === 0){
-//         symptoms.push(randDisease.symptoms[0])
-//     }
-//     else if(diseaseCount %3 ===0){
-//         for(let i=0; i < turnArray.length;i++){
-//                 if(turnArray[i] != symptoms[i]){
-//                     symptoms.push(turnArray[i])
-//                     // Tell user the symptoms here
-//                     // Tell user the symptoms here
-//                 }
-//             }
-//         } // Iterate how many syptoms we have
-
-//     }
 var showsympt = function(){
         for(let i=0; i < turnArray.length;i++){
-            if(diseaseCount < 10){ // less when the disease starts.
+            if(diseaseCount < 10){ 
                 if(turnArray.length %2 ===0 && turnArray[i] != symptoms[i]){
                     symptoms.push(turnArray[i])
-                    // Tell user the symptoms here
-                    // Tell user the symptoms here
                 }
-            }else if(diseaseCount >10){ // more when the disease spreads
+            }else if(diseaseCount >10){ 
                 if(turnArray[i] != symptoms[i]){
                     symptoms.push(turnArray[i])
-                }
-                
             }
-        }  
-        } // Iterate how many syptoms we have
+        }
+    }  
+} 
     
 //////////////////// C O R E   L O G I C ////////////////////////////
 //////////////////// C O R E   L O G I C ////////////////////////////
 //////////////////// C O R E   L O G I C ////////////////////////////
+
 function fateOfCity(){
 
 ///////////////    M A K I N G    W R O N G  C H O I C E S   ////////////////////////
@@ -1590,44 +1553,15 @@ if ((govtolerance) > 1 && (govtolerance) <= 5){
 
 
 ///////////////////  M A K E   T H E  M A P ////////////////////////////////////
-// var map;
-// var pathogen;
-// function pathGool(){ var pathogenTotal = [cityCircle1 = new google.maps.Circle({
-//     strokeColor: '#075290',
-//     strokeOpacity: 0.8,
-//     strokeWeight: 2,
-//     fillColor: '#075290',
-//     fillOpacity: 0.064,
-//     map: map,
-//     center: selectedCity.center,
-//     radius: (selectedCity.ringSize *100) 
-//     }),
-//     cityCircle = new google.maps.Circle({
-//     strokeColor: '#FF0000',
-//     strokeOpacity: 0.8,
-//     strokeWeight: 2,
-//     fillColor: '#FF0000',
-//     fillOpacity: 0.35,
-//     map: map,
-//     center: selectedCity.center,
-//     radius: (selectedCity.ringSize *10) 
-//     })]
-//     return pathogenTotal[0],pathogenTotal[1]
-// }
-// function toggleInfection() {
-//     pathogen.setMap(pathogen.getMap() ? null : map);
-//}
+
 function initMap() {
     // Create the map.
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: (selectedCity.area <= 250) ? 13 : (selectedCity.area <= 350) ? 12 : (selectedCity.area <= 500) ? 11 : (selectedCity.area <= 750) ? 10.75 : (selectedCity.area <= 1000) ? 10 : 10.25,
         center: selectedCity.center,
-        // gestureHandling: "none",
         mapTypeId: 'terrain'
     });
-// pathGool()
-
-    // I N I T I A L   Z O N E
+// I N I T I A L   Z O N E
     var cityCircle = new google.maps.Circle({
         strokeColor: '#FF0000',
         strokeOpacity: 0.8,
@@ -1638,7 +1572,7 @@ function initMap() {
         center: selectedCity.center,
         radius: (selectedCity.ringSize *6) 
         });
-        // Q U A R A N T I N E  B O R D E R
+// Q U A R A N T I N E  B O R D E R
         var cityCircle1 = new google.maps.Circle({
         strokeColor: '#075290',
         strokeOpacity: 0.8,
@@ -1654,336 +1588,242 @@ function initMap() {
 //// S P R E A D  D I S E A S E //////// S P R E A D  D I S E A S E ///////////////////
 //// S P R E A D  D I S E A S E //////// S P R E A D  D I S E A S E ///////////////////
 
-        $('#govsub').click(()=>{
+$('#govsub').click(()=>{
+
+
 ////////////////  S T A R T  G A M E ///////////////////////
 ////////////////  S T A R T  G A M E ///////////////////////
 ////////////////  S T A R T  G A M E ///////////////////////
-    
-    if(diseaseCount > 5 && diseaseCount <=7){
-            for(let i=0; i < (diseaseCount-4); i++){
-            selectedCity.center = selectedCity.center
-        randomLat = [Math.random() * (-0.050 - 0.0400) -.099,
-                    Math.random() * (-0.040 - 0.0300) -.08,
-                    Math.random() * (-0.030 - 0.02) - .04,
-                    Math.random() * (-0.0020 - 0.000) - .02,
-                    Math.random() * (-0.0010 - 0.000) - .02,
-                    Math.random() * (0 - 0) +0,
-                    Math.random() * (0.050 + 0.0400) + .099,
-                    Math.random() * (0.040 + 0.0300)+ .08,
-                    Math.random() * (0.030 + 0.025)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02,
-                    Math.random() * (-0.0020 - 0.000) - .02,]
-        randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
 
-        randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
-                    Math.random() * (-0.040 - 0.0300) -.08,
-                    Math.random() * (-0.030 - 0.02) - .04,
-                    Math.random() * (-0.0020 - 0.000) - .02,
-                    Math.random() * (0 - 0) +0,
-                    Math.random() * (0.050 + 0.0400) + .099,
-                    Math.random() * (0.040 + 0.0300)+ .08,
-                    Math.random() * (0.030 + 0.025)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02]
-        randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
-        if(selectedCity.area < 310 && selectedCity.area > 200){
-            randLngPick=(randLngPick/1.85), randLatPick= (randLatPick/1.85)
-        }else if(selectedCity.area < 200){
-            randLngPick=(randLngPick/3), randLatPick= (randLatPick/3)
-        }else if(selectedCity.area >= 1000){
-            randLngPick=(randLngPick * 1.4), randLatPick= (randLatPick * 1.4)
-        }else if(selectedCity.area < 1000 && selectedCity.area >= 800){
-            randLngPick=(randLngPick*1.38), randLatPick= (randLatPick*1.38)
-        }else if(selectedCity.area < 700 && selectedCity.area >= 599){
-            randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
-        } else if(selectedCity.area < 420 && selectedCity.area >= 390){
-            randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
-        }
-        
-        
-        // lat =Math.random() * (0.0120 - 0.0100);
-        // lng =Math.random() * (0.0120 + 0.0100);
-        console.log(randLatPick,randLngPick);
-        let cityCircle0 = new google.maps.Circle({
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35,
-        map: map,
-        center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
-        // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
-        radius: (selectedCity.area * (Math.random()*(4-1)))
-        })};
-////////////////  M I D D L E  G A M E ///////////////////////
-////////////////  M I D D L E  G A M E ///////////////////////
-////////////////  M I D D L E  G A M E ///////////////////////
-    }else if (diseaseCount > 9 && diseaseCount <=15){
-        for(let i=0; i < (diseaseCount -8); i++){
-            selectedCity.center = selectedCity.center
-        randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
-                    Math.random() * (-0.020 - 0.0100) -.08,
-                    Math.random() * (-0.0120 - 0.005) - .04,
-                    Math.random() * (-0.0020 - 0.000) - .02,
-                    Math.random() * (-0.0010 - 0.000) - .01,
-                    Math.random() * (0 - 0) +0,
-                    Math.random() * (0.030 + 0.0200) + .099,
-                    Math.random() * (0.020 + 0.0100)+ .08,
-                    Math.random() * (0.0120 + 0.005)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02,
-                    Math.random() * (0.0010 - 0.000) - .01,]
-        randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
 
-        randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
-                    Math.random() * (-0.040 - 0.0300) -.08,
-                    Math.random() * (-0.030 - 0.02) - .04,
-                    Math.random() * (-0.0020 - 0.000) - .02,
-                    Math.random() * (0 - 0) +0,
-                    Math.random() * (0.050 + 0.0400) + .099,
-                    Math.random() * (0.040 + 0.0300)+ .08,
-                    Math.random() * (0.030 + 0.025)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02]
-        randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
-        if(selectedCity.area < 310 && selectedCity.area > 200){
-            randLngPick=(randLngPick/1.85), randLatPick= (randLatPick/1.85)
-        }else if(selectedCity.area < 200){
-            randLngPick=(randLngPick/3), randLatPick= (randLatPick/3)
-        }else if(selectedCity.area >= 1000){
-            randLngPick=(randLngPick * 1.4), randLatPick= (randLatPick * 1.4)
-        }else if(selectedCity.area < 1000 && selectedCity.area >= 800){
-            randLngPick=(randLngPick*1.38), randLatPick= (randLatPick*1.38)
-        }else if(selectedCity.area < 700 && selectedCity.area >= 599){
-            randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
-        } else if(selectedCity.area < 420 && selectedCity.area >= 390){
-            randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
-        }
-        
-        
-        // lat =Math.random() * (0.0120 - 0.0100);
-        // lng =Math.random() * (0.0120 + 0.0100);
-        console.log(randLatPick,randLngPick);
-        let cityCircle0 = new google.maps.Circle({
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35,
-        map: map,
-        center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
-        // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
-        radius: (selectedCity.area * (Math.random()*(6-4)))
-        })};
-////////////////  N E A R  E N D   G A M E ///////////////////////
-////////////////  N E A R  E N D   G A M E ///////////////////////
-////////////////  N E A R  E N D   G A M E ///////////////////////
+if(diseaseCount > 5 && diseaseCount <=7){
+        for(let i=0; i < (diseaseCount-4); i++){
+        selectedCity.center = selectedCity.center
+    randomLat = [Math.random() * (-0.050 - 0.0400) -.099,
+                Math.random() * (-0.040 - 0.0300) -.08,
+                Math.random() * (-0.030 - 0.02) - .04,
+                Math.random() * (-0.0020 - 0.000) - .02,
+                Math.random() * (-0.0010 - 0.000) - .02,
+                Math.random() * (0 - 0) +0,
+                Math.random() * (0.050 + 0.0400) + .099,
+                Math.random() * (0.040 + 0.0300)+ .08,
+                Math.random() * (0.030 + 0.025)+ .04,
+                Math.random() * (0.0020 + 0.000) + .02,
+                Math.random() * (-0.0020 - 0.000) - .02,]
+    randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
 
-    }else if(diseaseCount > 16 && diseaseCount <=23){
-        for(let i=0; i < diseaseCount - 14; i++){
-            selectedCity.center = selectedCity.center
-        randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
-                    Math.random() * (-0.020 - 0.0100) -.08,
-                    Math.random() * (-0.0120 - 0.005) - .04,
-                    Math.random() * (-0.0020 - 0.000) - .02,
-                    Math.random() * (-0.0010 - 0.000) - .01,
-                    Math.random() * (0 - 0) +0,
-                    Math.random() * (0.030 + 0.0200) + .099,
-                    Math.random() * (0.020 + 0.0100)+ .08,
-                    Math.random() * (0.0120 + 0.005)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02,
-                    Math.random() * (0.0010 - 0.000) - .01,]
-        randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
-
-        randomLng = [Math.random() * (-0.030 - 0.0200) -.099,
-                    Math.random() * (-0.020 - 0.0100) -.08,
-                    Math.random() * (-0.0120 - 0.005) - .04,
-                    Math.random() * (-0.0020 - 0.000) - .02,
-                    Math.random() * (0 - 0) +0,
-                    Math.random() * (0.030 + 0.0200) + .099,
-                    Math.random() * (0.020 + 0.0100)+ .08,
-                    Math.random() * (0.0120 + 0.005)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02]
-        randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
-        if(selectedCity.area < 310 && selectedCity.area > 200){
-            randLngPick=(randLngPick/1.85), randLatPick= (randLatPick/1.85)
-        }else if(selectedCity.area < 200){
-            randLngPick=(randLngPick/3), randLatPick= (randLatPick/3)
-        }else if(selectedCity.area >= 1000){
-            randLngPick=(randLngPick * 1.4), randLatPick= (randLatPick * 1.4)
-        }else if(selectedCity.area < 1000 && selectedCity.area >= 800){
-            randLngPick=(randLngPick*1.38), randLatPick= (randLatPick*1.38)
-        }else if(selectedCity.area < 700 && selectedCity.area >= 599){
-            randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
-        } else if(selectedCity.area < 420 && selectedCity.area >= 390){
-            randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
-        }
-        
-        
-        // lat =Math.random() * (0.0120 - 0.0100);
-        // lng =Math.random() * (0.0120 + 0.0100);
-        console.log(randLatPick,randLngPick);
-        let cityCircle0 = new google.maps.Circle({
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35,
-        map: map,
-        center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
-        // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
-        radius: (selectedCity.area * (Math.random()*(8-4)))
-        })};
-////////////////  E N D   G A M E ///////////////////////
-////////////////  E N D   G A M E ///////////////////////
-////////////////  E N D   G A M E ///////////////////////
-    }else if(diseaseCount > 23){
-        for(let i=0; i < 10; i++){
-            selectedCity.center = selectedCity.center
-        randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
-                    Math.random() * (-0.020 - 0.0100) -.08,
-                    Math.random() * (-0.0120 - 0.005) - .04,
-                    Math.random() * (-0.0020 - 0.000) - .02,
-                    Math.random() * (-0.0010 - 0.000) - .01,
-                    Math.random() * (0 - 0) +0,
-                    Math.random() * (0.030 + 0.0200) + .099,
-                    Math.random() * (0.020 + 0.0100)+ .08,
-                    Math.random() * (0.0120 + 0.005)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02,
-                    Math.random() * (0.0010 - 0.000) - .01,]
-        randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
-
-        randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
-                    Math.random() * (-0.040 - 0.0300) -.08,
-                    Math.random() * (-0.030 - 0.02) - .04,
-                    Math.random() * (-0.0020 - 0.000) - .02,
-                    Math.random() * (0 - 0) +0,
-                    Math.random() * (0.050 + 0.0400) + .099,
-                    Math.random() * (0.040 + 0.0300)+ .08,
-                    Math.random() * (0.030 + 0.025)+ .04,
-                    Math.random() * (0.0020 + 0.000) + .02]
-        randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
-        if(selectedCity.area < 310 && selectedCity.area > 200){
-            randLngPick=(randLngPick/1.85), randLatPick= (randLatPick/1.85)
-        }else if(selectedCity.area < 200){
-            randLngPick=(randLngPick/3), randLatPick= (randLatPick/3)
-        }else if(selectedCity.area >= 1000){
-            randLngPick=(randLngPick * 1.4), randLatPick= (randLatPick * 1.4)
-        }else if(selectedCity.area < 1000 && selectedCity.area >= 800){
-            randLngPick=(randLngPick*1.38), randLatPick= (randLatPick*1.38)
-        }else if(selectedCity.area < 700 && selectedCity.area >= 599){
-            randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
-        } else if(selectedCity.area < 420 && selectedCity.area >= 390){
-            randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
-        }
-        
-        
-        // lat =Math.random() * (0.0120 - 0.0100);
-        // lng =Math.random() * (0.0120 + 0.0100);
-        console.log(randLatPick,randLngPick);
-        let cityCircle0 = new google.maps.Circle({
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35,
-        map: map,
-        center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
-        // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
-        radius: (selectedCity.area * (Math.random()*(10-5)))
-        })};
-
-    }else {return}
+    randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
+                Math.random() * (-0.040 - 0.0300) -.08,
+                Math.random() * (-0.030 - 0.02) - .04,
+                Math.random() * (-0.0020 - 0.000) - .02,
+                Math.random() * (0 - 0) +0,
+                Math.random() * (0.050 + 0.0400) + .099,
+                Math.random() * (0.040 + 0.0300)+ .08,
+                Math.random() * (0.030 + 0.025)+ .04,
+                Math.random() * (0.0020 + 0.000) + .02]
+    randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
+    if(selectedCity.area < 310 && selectedCity.area > 200){
+        randLngPick=(randLngPick/1.85), randLatPick= (randLatPick/1.85)
+    }else if(selectedCity.area < 200){
+        randLngPick=(randLngPick/3), randLatPick= (randLatPick/3)
+    }else if(selectedCity.area >= 1000){
+        randLngPick=(randLngPick * 1.4), randLatPick= (randLatPick * 1.4)
+    }else if(selectedCity.area < 1000 && selectedCity.area >= 800){
+        randLngPick=(randLngPick*1.38), randLatPick= (randLatPick*1.38)
+    }else if(selectedCity.area < 700 && selectedCity.area >= 599){
+        randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
+    } else if(selectedCity.area < 420 && selectedCity.area >= 390){
+        randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
     }
-    )
+    
+    let cityCircle0 = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    map: map,
+    center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
+    radius: (selectedCity.area * (Math.random()*(4-1)))
+    })};
+
+
+////////////////  M I D D L E  G A M E ///////////////////////
+////////////////  M I D D L E  G A M E ///////////////////////
+////////////////  M I D D L E  G A M E ///////////////////////
+
+
+}else if (diseaseCount > 9 && diseaseCount <=15){
+    for(let i=0; i < (diseaseCount -8); i++){
+        selectedCity.center = selectedCity.center
+    randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
+                Math.random() * (-0.020 - 0.0100) -.08,
+                Math.random() * (-0.0120 - 0.005) - .04,
+                Math.random() * (-0.0020 - 0.000) - .02,
+                Math.random() * (-0.0010 - 0.000) - .01,
+                Math.random() * (0 - 0) +0,
+                Math.random() * (0.030 + 0.0200) + .099,
+                Math.random() * (0.020 + 0.0100)+ .08,
+                Math.random() * (0.0120 + 0.005)+ .04,
+                Math.random() * (0.0020 + 0.000) + .02,
+                Math.random() * (0.0010 - 0.000) - .01,]
+    randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
+
+    randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
+                Math.random() * (-0.040 - 0.0300) -.08,
+                Math.random() * (-0.030 - 0.02) - .04,
+                Math.random() * (-0.0020 - 0.000) - .02,
+                Math.random() * (0 - 0) +0,
+                Math.random() * (0.050 + 0.0400) + .099,
+                Math.random() * (0.040 + 0.0300)+ .08,
+                Math.random() * (0.030 + 0.025)+ .04,
+                Math.random() * (0.0020 + 0.000) + .02]
+    randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
+    if(selectedCity.area < 310 && selectedCity.area > 200){
+        randLngPick=(randLngPick/1.85), randLatPick= (randLatPick/1.85)
+    }else if(selectedCity.area < 200){
+        randLngPick=(randLngPick/3), randLatPick= (randLatPick/3)
+    }else if(selectedCity.area >= 1000){
+        randLngPick=(randLngPick * 1.4), randLatPick= (randLatPick * 1.4)
+    }else if(selectedCity.area < 1000 && selectedCity.area >= 800){
+        randLngPick=(randLngPick*1.38), randLatPick= (randLatPick*1.38)
+    }else if(selectedCity.area < 700 && selectedCity.area >= 599){
+        randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
+    } else if(selectedCity.area < 420 && selectedCity.area >= 390){
+        randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
     }
-
-// function initMap() {
-//     // Create the map.
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//         // zoom: (selectedCity.area <= 250) ? 14 : 10.25,
-//         zoom: (selectedCity.area <= 250) ? 13 : (selectedCity.area <= 350) ? 12 : (selectedCity.area <= 500) ? 11 : (selectedCity.area <= 750) ? 10.75 : (selectedCity.area <= 1000) ? 10 : 10.25,
-//         center: selectedCity.center,
-//         gestureHandling: "none",
-//         mapTypeId: 'terrain'
-//     });
-
     
-// G O O G L E   M A P S    C I R C L E
-// heatmapData = [
-//     new google.maps.LatLng(selectedCity.center)
-// ]
-//     // Construct the circle for each value in citymap.
-//     // Note: We scale the area of the circle based on the population.
-//     var heatmap = new google.maps.visualization.HeatmapLayer({
-//         dissipating: true,
-//         radius: 60,
-//         data: heatmapData,
-//         map: map
-//     });
+    let cityCircle0 = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    map: map,
+    center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
+    // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
+    radius: (selectedCity.area * (Math.random()*(6-4)))
+    })};
+////////////////  N E A R  E N D   G A M E ///////////////////////
+////////////////  N E A R  E N D   G A M E ///////////////////////
+////////////////  N E A R  E N D   G A M E ///////////////////////
 
-// function changeGradient() {
-//     var gradient = [
-//         'rgba(0, 255, 255, 0)',
-//         'rgba(0, 255, 255, 1)',
-//         'rgba(0, 191, 255, 1)',
-//         'rgba(0, 127, 255, 1)',
-//         'rgba(0, 63, 255, 1)',
-//         'rgba(0, 0, 255, 1)',
-//         'rgba(0, 0, 223, 1)',
-//         'rgba(0, 0, 191, 1)',
-//         'rgba(0, 0, 159, 1)',
-//         'rgba(0, 0, 127, 1)',
-//         'rgba(63, 0, 91, 1)',
-//         'rgba(127, 0, 63, 1)',
-//         'rgba(191, 0, 31, 1)',
-//         'rgba(255, 0, 0, 1)'
-//     ]
-//     heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
-// }
+}else if(diseaseCount > 16 && diseaseCount <=23){
+    for(let i=0; i < diseaseCount - 14; i++){
+        selectedCity.center = selectedCity.center
+    randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
+                Math.random() * (-0.020 - 0.0100) -.08,
+                Math.random() * (-0.0120 - 0.005) - .04,
+                Math.random() * (-0.0020 - 0.000) - .02,
+                Math.random() * (-0.0010 - 0.000) - .01,
+                Math.random() * (0 - 0) +0,
+                Math.random() * (0.030 + 0.0200) + .099,
+                Math.random() * (0.020 + 0.0100)+ .08,
+                Math.random() * (0.0120 + 0.005)+ .04,
+                Math.random() * (0.0020 + 0.000) + .02,
+                Math.random() * (0.0010 - 0.000) - .01,]
+    randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
 
-// function changeRadius() {
-//     heatmap.set('radius', heatmap.get('radius') ? null : 3000);
-// }
-
-// function changeOpacity() {
-//     heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
-// }
+    randomLng = [Math.random() * (-0.030 - 0.0200) -.099,
+                Math.random() * (-0.020 - 0.0100) -.08,
+                Math.random() * (-0.0120 - 0.005) - .04,
+                Math.random() * (-0.0020 - 0.000) - .02,
+                Math.random() * (0 - 0) +0,
+                Math.random() * (0.030 + 0.0200) + .099,
+                Math.random() * (0.020 + 0.0100)+ .08,
+                Math.random() * (0.0120 + 0.005)+ .04,
+                Math.random() * (0.0020 + 0.000) + .02]
+    randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
+    if(selectedCity.area < 310 && selectedCity.area > 200){
+        randLngPick=(randLngPick/1.85), randLatPick= (randLatPick/1.85)
+    }else if(selectedCity.area < 200){
+        randLngPick=(randLngPick/3), randLatPick= (randLatPick/3)
+    }else if(selectedCity.area >= 1000){
+        randLngPick=(randLngPick * 1.4), randLatPick= (randLatPick * 1.4)
+    }else if(selectedCity.area < 1000 && selectedCity.area >= 800){
+        randLngPick=(randLngPick*1.38), randLatPick= (randLatPick*1.38)
+    }else if(selectedCity.area < 700 && selectedCity.area >= 599){
+        randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
+    } else if(selectedCity.area < 420 && selectedCity.area >= 390){
+        randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
+    }
     
-// }
-        // Add the circle for this city to the map.
-    //     var cityCircle = new google.maps.Circle({
-    //     strokeColor: '#FF0000',
-    //     strokeOpacity: 0.8,
-    //     strokeWeight: 2,
-    //     fillColor: '#FF0000',
-    //     fillOpacity: 0.35,
-    //     map: map,
-    //     center: selectedCity.center,
-    //     radius: (selectedCity.ringSize *10) 
-    //     });
-    //     var cityCircle1 = new google.maps.Circle({
-    //     strokeColor: '#075290',
-    //     strokeOpacity: 0.8,
-    //     strokeWeight: 2,
-    //     fillColor: '#075290',
-    //     fillOpacity: 0.064,
-    //     map: map,
-    //     center: selectedCity.center,
-    //     radius: (selectedCity.ringSize *100) 
-    //     });
-    // }
+    
+    let cityCircle0 = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    map: map,
+    center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
+    radius: (selectedCity.area * (Math.random()*(8-4)))
+    })};
 
-///////////////  S P R E A D  I N F E C T I O N ///////////////////
 
-// switch(diseaseCount){
-//     case (diseaseCount >5 && diseaseCount <=7):
+////////////////  E N D   G A M E ///////////////////////
+////////////////  E N D   G A M E ///////////////////////
+////////////////  E N D   G A M E ///////////////////////
 
-//         let cityCircle3 = new google.maps.Circle({
-//             strokeColor: '#FF0000',
-//             strokeOpacity: 0.8,
-//             strokeWeight: 2,
-//             fillColor: '#FF0000',
-//             fillOpacity: 0.35,
-//             map: map,
-//             center: (selectedCity.center.lat += Math.floor(Math.random()*1)-.5 , selectedCity.center.lon += Math.floor(Math.random()*1)-.5),
-//             radius: (selectedCity.ringSize *10) 
-//             });
-// }
+
+}else if(diseaseCount > 23){
+    for(let i=0; i < 10; i++){
+        selectedCity.center = selectedCity.center
+    randomLat = [Math.random() * (-0.030 - 0.0200) -.099,
+                Math.random() * (-0.020 - 0.0100) -.08,
+                Math.random() * (-0.0120 - 0.005) - .04,
+                Math.random() * (-0.0020 - 0.000) - .02,
+                Math.random() * (-0.0010 - 0.000) - .01,
+                Math.random() * (0 - 0) +0,
+                Math.random() * (0.030 + 0.0200) + .099,
+                Math.random() * (0.020 + 0.0100)+ .08,
+                Math.random() * (0.0120 + 0.005)+ .04,
+                Math.random() * (0.0020 + 0.000) + .02,
+                Math.random() * (0.0010 - 0.000) - .01,]
+    randLatPick = randomLat[Math.floor(Math.random()*randomLat.length-1)+0]
+
+    randomLng = [Math.random() * (-0.050 - 0.0400) -.099,
+                Math.random() * (-0.040 - 0.0300) -.08,
+                Math.random() * (-0.030 - 0.02) - .04,
+                Math.random() * (-0.0020 - 0.000) - .02,
+                Math.random() * (0 - 0) +0,
+                Math.random() * (0.050 + 0.0400) + .099,
+                Math.random() * (0.040 + 0.0300)+ .08,
+                Math.random() * (0.030 + 0.025)+ .04,
+                Math.random() * (0.0020 + 0.000) + .02]
+    randLngPick = randomLng[Math.floor(Math.random()*randomLng.length)+0]
+    if(selectedCity.area < 310 && selectedCity.area > 200){
+        randLngPick=(randLngPick/1.85), randLatPick= (randLatPick/1.85)
+    }else if(selectedCity.area < 200){
+        randLngPick=(randLngPick/3), randLatPick= (randLatPick/3)
+    }else if(selectedCity.area >= 1000){
+        randLngPick=(randLngPick * 1.4), randLatPick= (randLatPick * 1.4)
+    }else if(selectedCity.area < 1000 && selectedCity.area >= 800){
+        randLngPick=(randLngPick*1.38), randLatPick= (randLatPick*1.38)
+    }else if(selectedCity.area < 700 && selectedCity.area >= 599){
+        randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
+    } else if(selectedCity.area < 420 && selectedCity.area >= 390){
+        randLngPick=(randLngPick/1.2), randLatPick= (randLatPick/1.2)
+    }
+    
+
+    let cityCircle0 = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    map: map,
+    center: {lat:(selectedCity.center.lat + randLatPick),lng:(selectedCity.center.lng + randLngPick)},
+    // {lat:(selectedCity.center.lat += lat),lng:(selectedCity.center.lng += lng)},
+    radius: (selectedCity.area * (Math.random()*(10-5)))
+    })};
+
+}else {return}
+}
+)
+}
+
+///////////////////    T H E   E N D!!!!   ///////////////////
+///////////////////    T H E   E N D!!!!   ///////////////////
+///////////////////    T H E   E N D!!!!   ///////////////////

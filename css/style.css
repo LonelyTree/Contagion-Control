@@ -6,7 +6,7 @@
         url('hinted-1942report.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
+} 
 
 @font-face {
     font-family: '1942 report';
@@ -17,15 +17,14 @@
     font-style: normal;
 }
 /* S T A R T  */
-  
- @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
- @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
- @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .flicker-4 {
 	-webkit-animation: flicker-4 4s linear infinite both;
             animation: flicker-4 4s linear infinite both;
-            
 }
 #start {
     cursor: pointer;
@@ -59,7 +58,10 @@
     justify-content: center;
     align-items: center;
 }
+
 /* F R O N T  P A G E  */
+
+
 #frontpagewrapper {
     width: 100%;
     height: 100%;
@@ -130,7 +132,11 @@
     margin-left: 3.5%;
     z-index: 10;
 }
+
+
  /* E N D   P A G E  */
+
+
 
 #backpagewrapper {
     width: 100%;
@@ -203,7 +209,11 @@
     z-index: 10;
 }
 
+
 /* M O D A L*/
+
+
+
 .hide {
     display: none;
 }
@@ -264,7 +274,11 @@
     color: #00ff90;
 }
 
+
 /* P R O G R E S S    B A R */
+
+
+
 progress[value] {
     -webkit-appearance: none;
     width: 54%;
@@ -308,9 +322,15 @@ p {
     border: groove;
     border-radius: 10%;
 }
+
+
 /* E N D   P R O G R E S S    B A R */
 
+
+
 /* E V E N T   W I N D O W */
+
+
 
 #windowanchor {
     display: inline-flex;
@@ -384,9 +404,15 @@ p {
     ;
 }
 
+
 /* E N D  E V E N T   W I N D O W */
 
+
+
 /* G O O G L E   M A P S  B U T N  R E M O V E */
+
+
+
 .gm-control-active{
     display:none;
     margin-right:100%
@@ -404,9 +430,17 @@ nav {
 .gmnoprint {
     position: absolute;
 }
+
+
+
 /* E N D   G O O G L E   M A P S  B U T N  R E M O V E */
 
+
+
 /* M A I N   B U T N   S E L C T  W R A P*/
+
+
+
 #wrapper { 
     position: absolute;
     width: 41.5%;
@@ -429,9 +463,17 @@ nav {
     margin-left: 2%;
     background: white;
 }
+
+
+
 /* E N D   M A I N   B U T N   S E L C T  W R A P*/
 
+
+
 /* M A I N   B U T N   S E L C T */
+
+
+
 #section {
     display: inherit;
     width: 100%;
@@ -498,9 +540,17 @@ nav {
     /* display: flex; */
     border-radius: 10px 10px 10px 10px;
 }
+
+
+
 /* E N D   M A I N   B U T N   S E L C T */
 
+
+
 /* G O V N M T   W R A P R */
+
+
+
 #governmentwrap{
     width: 86.122222%;
     height: 40vh;
@@ -540,9 +590,17 @@ nav {
     color: white;
     /* box-shadow: 0px 0px 20px 1px; */
 }
+
+
+
 /* E N D   G O V N M T   W R A P R */
 
+
+
 /* P O P L T N   W R A P R */
+
+
+
 
 #populationwrap{
     width: 64.1222%;
@@ -561,9 +619,18 @@ nav {
     margin-top: -6%;
 }
 
+
+
 /* E N D   P O P L T N   W R A P R */
 
+
+
+
 /* S C I   W R A P */
+
+
+
+
 #scientistwrap{
     width: 86.122222%;
     height: 27vh;
@@ -637,12 +704,19 @@ nav {
 #bad{
     background: #607d8b00;
 }
+
+
+
 /* S U B   B T N S */
 
-/* R E F   C O D E   B U T N */
-/* #action {
 
-} */
+
+
+
+/* R E F   C O D E   B U T N */
+
+
+
 #refcodes {
     width: 126%;
     height: 37vh;
@@ -690,9 +764,6 @@ color: black;
 .public ul li {
     margin-left: 20%;
 }
-/* .government ul li {
-
-} */
 .pathogen ul li:hover{
     background:#10c681
 }
@@ -718,10 +789,13 @@ color: black;
     box-shadow: 0px 0px 0px 1px;
 }
 
-/* N B C A A  R E F F E R  B U T N */
-/* #guide {
 
-} */
+
+/* N B C A A  R E F F E R  B U T N */
+
+
+
+
 #refguide {
     width: 246%;
     height: 59vh;
@@ -763,10 +837,12 @@ li {
 }
 
 
+
 /* E M E R G E N C Y  B U T N */
-/* #solutions {
-    pointer-events: none;
-} */
+
+
+
+
 #emgsolutions {
     width: 40%;
     height: 39vh;
@@ -805,26 +881,20 @@ li {
     border-radius: 3px 3px 3px 3px;
     margin-top: 39%;
 }
+
+
+
+
 /* E N D  S C I   W R A P R */
 
 
 
 
-
-
-
-
-
-
  /* G O O G L E   M A P S */
-/* Always set the map height explicitly to define the size of the div
-element that contains the map. */
 
 #map {
 height: 100%;
 }
-
-/* Optional: Makes the sample page fill the window. */
 html,
 body {
 height: 100%;

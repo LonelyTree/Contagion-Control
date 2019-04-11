@@ -413,7 +413,7 @@ var turnCount = 0; // max is 10
 var cureCount = 0; // max is 20
 
 //////////// D I S E A S E   C O U N T ////////////////////////////////////////////
-var diseaseCount = 0; // max is 30 // every three numbers the disease counter goes up.
+var diseaseCount = 3; // max is 30 // every three numbers the disease counter goes up.
 
 //////////// P U B L I C  U N R E S T  C O U N T ////////////////////////////////////////////
 var publicUnrest = 0; // max is 30
@@ -494,7 +494,7 @@ var selectedCity = citymap[Math.floor(Math.random() * citymap.length)]
 var cityPopulation = (selectedCity.area + 2600) ** 2
 //////////// D I S E A S E   S Y M P T O M   B I N ////////////////////////////////////////////
 var symptoms = [];
-//////////// D I S E A S E   T Y P E ////////////////////////////////////////////
+//////////// D I S E A S E   L I B R A R Y  ////////////////////////////////////////////
 var diseases = [
     {name: "CHIMERIC Smallpox",
     symptoms: {1: 'Malaise',
@@ -511,6 +511,17 @@ var diseases = [
 }
 
 ]
+//////////// C H O O S E   D I S E A S E  ///////////////////////////////
+
+// var randDisease = diseases[Math.floor(Math.random() * diseases.length-1)];
+var randDisease = diseases[0];
+///////////// A P P E A R A N C E  O F  S Y M P T O M S //////////////
+
+var symptAppear = randDisease.symptoms[(diseaseCount / 3)]
+var holder = []
+holder.push(symptAppear)
+symptoms.push(holder)
+
 //////////////////// C O R E   L O G I C ////////////////////////////
 
 ///////////////    M A K I N G    W R O N G  C H O I C E S   ////////////////////////
@@ -563,11 +574,8 @@ if ((governmentAbility) > 1 && (governmentAbility) <= 5){
     cureCount += 1
 }   
 
-// determining appearance of symptoms
-
-(diseaseCount / 3)
-
 ///////////////////  M A K E   T H E  M A P ////////////////////////////////////
+
 
 function initMap() {
     // Create the map.
@@ -578,30 +586,84 @@ function initMap() {
         mapTypeId: 'terrain'
     });
 
+    
 // G O O G L E   M A P S    C I R C L E
-
+heatmapData = [
+    new google.maps.LatLng(selectedCity.center)
+]
     // Construct the circle for each value in citymap.
     // Note: We scale the area of the circle based on the population.
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+        dissipating: true,
+        radius: 60,
+        data: heatmapData,
+        map: map
+    });
+
+function changeGradient() {
+    var gradient = [
+        'rgba(0, 255, 255, 0)',
+        'rgba(0, 255, 255, 1)',
+        'rgba(0, 191, 255, 1)',
+        'rgba(0, 127, 255, 1)',
+        'rgba(0, 63, 255, 1)',
+        'rgba(0, 0, 255, 1)',
+        'rgba(0, 0, 223, 1)',
+        'rgba(0, 0, 191, 1)',
+        'rgba(0, 0, 159, 1)',
+        'rgba(0, 0, 127, 1)',
+        'rgba(63, 0, 91, 1)',
+        'rgba(127, 0, 63, 1)',
+        'rgba(191, 0, 31, 1)',
+        'rgba(255, 0, 0, 1)'
+    ]
+    heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+}
+
+function changeRadius() {
+    heatmap.set('radius', heatmap.get('radius') ? null : 3000);
+}
+
+function changeOpacity() {
+    heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+}
     
+}
         // Add the circle for this city to the map.
-        var cityCircle = new google.maps.Circle({
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35,
-        map: map,
-        center: selectedCity.center,
-        radius: (selectedCity.ringSize *10) 
-        });
-        var cityCircle1 = new google.maps.Circle({
-            strokeColor: '#075290',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#075290',
-            fillOpacity: 0.064,
-            map: map,
-            center: selectedCity.center,
-            radius: (selectedCity.ringSize *100) 
-            });
-    }
+    //     var cityCircle = new google.maps.Circle({
+    //     strokeColor: '#FF0000',
+    //     strokeOpacity: 0.8,
+    //     strokeWeight: 2,
+    //     fillColor: '#FF0000',
+    //     fillOpacity: 0.35,
+    //     map: map,
+    //     center: selectedCity.center,
+    //     radius: (selectedCity.ringSize *10) 
+    //     });
+    //     var cityCircle1 = new google.maps.Circle({
+    //         strokeColor: '#075290',
+    //         strokeOpacity: 0.8,
+    //         strokeWeight: 2,
+    //         fillColor: '#075290',
+    //         fillOpacity: 0.064,
+    //         map: map,
+    //         center: selectedCity.center,
+    //         radius: (selectedCity.ringSize *100) 
+    //         });
+    // }
+///////////////  S P R E A D  I N F E C T I O N ///////////////////
+
+// switch(diseaseCount){
+//     case (diseaseCount >5 && diseaseCount <=7):
+
+//         let cityCircle3 = new google.maps.Circle({
+//             strokeColor: '#FF0000',
+//             strokeOpacity: 0.8,
+//             strokeWeight: 2,
+//             fillColor: '#FF0000',
+//             fillOpacity: 0.35,
+//             map: map,
+//             center: (selectedCity.center.lat += Math.floor(Math.random()*1)-.5 , selectedCity.center.lon += Math.floor(Math.random()*1)-.5),
+//             radius: (selectedCity.ringSize *10) 
+//             });
+// }
