@@ -30,7 +30,7 @@ FROM:
                                       for intellegence and knowledge 
                                       gathering on your next assignment.
                                       
-                                     ```
+```
 # Starting Out:
 <img src="./css/CCREADME/TitlePage.png" >
 
