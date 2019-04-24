@@ -19,17 +19,17 @@ SATELLITE_FEED_FAIL: {$:false};
 SHA_DYNAMIC_HANDSHAKE: true;
 alert(INCOMING_MESSAGE);
 FROM:
-                   `_  __  __    __   _____ _____
-                   / |/ // _ ) / _ | / ___// ___/
-                  /    // _  |/ __ |/ /__ / /__  
-                 /_/|_//____//_/ |_|\___/ \___/ 
+                                               `_  __  __    __   _____ _____
+                                               / |/ // _ ) / _ | / ___// ___/
+                                              /    // _  |/ __ |/ /__ / /__  
+                                             /_/|_//____//_/ |_|\___/ \___/ 
 
-      National Biodefense Anaylsis and Countermeasures Center
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                Please read the below information 
-                for intellegence and knowledge 
-                gathering on your next assignment.
-```
+                                  National Biodefense Anaylsis and Countermeasures Center
+                            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                            Please read the below information 
+                                            for intellegence and knowledge 
+                                            gathering on your next assignment.
+                            ```
 # Starting Out:
 <img src="./css/CCREADME/TitlePage.png" >
 
@@ -44,8 +44,6 @@ FROM:
 <p>This is a reference book that has been given to you by the NBACC (National Biodefense Analysis and Countermeasures Center)
 Its containments are the collected databases of several secret biological diseases known to have been stolen or biological structure leaked to hostile contries.</p>
 </ul>
-
-<img src="">
 <img src="./css/CCREADME/MainPage.png">
 
 # ```User Interface```
