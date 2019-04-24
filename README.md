@@ -19,16 +19,16 @@ SATELLITE_FEED_FAIL: {$:false};
 SHA_DYNAMIC_HANDSHAKE: true;
 alert(INCOMING_MESSAGE);
 FROM:
-                                          _  __  __    __   _____ _____
-                                         / |/ // _ ) / _ | / ___// ___/
-                                        /    // _  |/ __ |/ /__ / /__  
-                                       /_/|_//____//_/ |_|\___/ \___/ 
+                                      _  __  __    __   _____ _____
+                                     / |/ // _ ) / _ | / ___// ___/
+                                    /    // _  |/ __ |/ /__ / /__  
+                                   /_/|_//____//_/ |_|\___/ \___/ 
 
-                            National Biodefense Anaylsis and Countermeasures Center
-                          >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                                      Please read the below information 
-                                      for intellegence and knowledge 
-                                      gathering on your next assignment.
+                        National Biodefense Anaylsis and Countermeasures Center
+                      >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                  Please read the below information 
+                                  for intellegence and knowledge 
+                                  gathering on your next assignment.
                                       
 ```
 # Starting Out:
